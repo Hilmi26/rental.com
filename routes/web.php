@@ -45,6 +45,6 @@ Route::get('single', function () {
     return view('single');
 });
 
-Route::get('testimonial', function () {
-    return view('about');
+Route::get('testimonials', function () {
+    return view('testimonials');
 });
