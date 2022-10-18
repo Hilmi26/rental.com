@@ -25,7 +25,7 @@
 
   <body>
 
-    
+
     <div class="site-wrap" id="home-section">
 
       <div class="site-mobile-menu site-navbar-target">
@@ -51,7 +51,7 @@
             </div>
 
             <div class="col-9  text-right">
-              
+
               <span class="d-inline-block d-lg-none"><a href="#" class=" site-menu-toggle js-menu-toggle py-5 "><span class="icon-menu h3 text-black"></span></a></span>
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
@@ -66,15 +66,15 @@
               </nav>
             </div>
 
-            
+
           </div>
         </div>
 
       </header>
 
-      
+
       <div class="hero" style="background-image: url('sb/images/hero_1_a.jpg');">
-        
+
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-lg-10">
@@ -84,11 +84,11 @@
                   <h1><strong>Rent a car</strong> is within your finger tips.</h1>
                 </div>
               </div>
-              
+
               <form class="trip-form">
-                
+
                 <div class="row align-items-center">
-                  
+
                   <div class="mb-3 mb-md-0 col-md-3">
                     <select name="" id="" class="custom-select form-control">
                       <option value="">Select Type</option>
@@ -115,20 +115,20 @@
                     <input type="submit" value="Search Now" class="btn btn-primary btn-block py-3">
                   </div>
                 </div>
-                
+
               </form>
 
             </div>
           </div>
         </div>
       </div>
-  
+
 
 
       <div class="site-section">
         <div class="container">
           <h2 class="section-heading"><strong>How it works?</strong></h2>
-          <p class="mb-5">Easy steps to get you started</p>    
+          <p class="mb-5">Easy steps to get you started</p>
 
           <div class="row mb-5">
             <div class="col-lg-4 mb-4 mb-lg-0">
@@ -174,7 +174,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="site-section">
         <div class="container">
           <div class="row align-items-center">
@@ -186,24 +186,24 @@
             <div class="col-lg-4 ml-auto order-lg-1">
               <h3 class="mb-4 section-heading"><strong>You can easily avail our promo for renting a car.</strong></h3>
               <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, explicabo iste a labore id est quas, doloremque veritatis! Provident odit pariatur dolorem quisquam, voluptatibus voluptates optio accusamus, vel quasi quidem!</p>
-              
+
               <p><a href="#" class="btn btn-primary">Meet them now</a></p>
             </div>
           </div>
         </div>
       </div>
 
-      
+
 
     <div class="site-section bg-light">
       <div class="container">
         <div class="row">
           <div class="col-lg-7">
             <h2 class="section-heading"><strong>Car Listings</strong></h2>
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>    
+            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
         </div>
-        
+
 
         <div class="row">
           <div class="col-md-6 col-lg-4 mb-4">
@@ -273,13 +273,13 @@
 
             </div>
           </div>
-          
+
 
           <div class="col-md-6 col-lg-4 mb-4">
 
             <div class="listing d-block  align-items-stretch">
               <div class="listing-img h-100 mr-4">
-                <img src="{{ asset('sb/images/car_4.jpg" alt="Image')}}" class="img-fluid">
+                <img src="{{ asset('sb/images/car_4.jpg')}}" alt="Image" class="img-fluid">
               </div>
               <div class="listing-contents h-100">
                 <h3>Honda Fitta</h3>
@@ -376,7 +376,7 @@
 
             </div>
           </div>
-          
+
 
           <div class="col-md-6 col-lg-4 mb-4">
 
@@ -421,7 +421,7 @@
         <div class="row">
           <div class="col-lg-7">
             <h2 class="section-heading"><strong>Features</strong></h2>
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>    
+            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
         </div>
 
@@ -509,7 +509,7 @@
         <div class="row">
           <div class="col-lg-7">
             <h2 class="section-heading"><strong>Testimonials</strong></h2>
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>    
+            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
         </div>
         <div class="row">
@@ -573,7 +573,7 @@
       </div>
     </div>
 
-      
+
       <footer class="site-footer">
         <div class="container">
           <div class="row">
