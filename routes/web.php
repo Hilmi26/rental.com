@@ -48,3 +48,6 @@ Route::get('single', function () {
 Route::get('testimonials', function () {
     return view('testimonials');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
