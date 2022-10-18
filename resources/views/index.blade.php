@@ -44,7 +44,8 @@
 
       {{-- include tampilan s --}}
       <div class="container-fluid">
-        @include('tampil')
+        {{-- @include('tampil') --}}
+        @include('flashmessage')
         @yield('main')
     </div>
         {{-- include tampilan e --}}
