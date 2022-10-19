@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('content')
+@extends('index')
+@section('main')
 
     <form action = "{{ url ('page/user/'.$data->id)}}" method = "POST">
     @csrf

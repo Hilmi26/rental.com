@@ -1,10 +1,11 @@
-@extends('layouts.app')
+@extends('index')
 
-@section('content')
-    
+@section('main')
+
+<div class="mt-5">
 <a href="{{ route ('user.create')}}" class="btn btn-primary btn-sm mb-3">Tambah Data</a>
 
-<table class="table text-center text-warning bg-dark">
+<table class="table text-center text-warning bg-dark" id="dataTable">
   <thead>
     <tr>
       <th scope="col">No.</th>
@@ -60,5 +61,6 @@
    
   </tbody>
 </table>
+</div>''
 
 @endsection

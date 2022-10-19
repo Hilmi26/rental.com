@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('sb/fonts/icomoon/style.css')}}">
+    
 
     <link rel="stylesheet" href="{{ asset('sb/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('sb/css/bootstrap-datepicker.css')}}">
@@ -20,6 +21,7 @@
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{ asset('sb/css/style.css')}}">
+    <link href="{{ asset ('sb/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 
   </head>
 
@@ -43,9 +45,9 @@
       {{-- include navbar e --}}
 
       {{-- include tampilan s --}}
-      <div class="container-fluid">
+      <div class="container-fluid p-5 mt-5 ">
         {{-- @include('tampil') --}}
-        @include('flashmessage')
+        {{-- @include('flashmessage') --}}
         @yield('main')
     </div>
         {{-- include tampilan e --}}
@@ -70,6 +72,10 @@
     <script src="{{ asset('sb/js/aos.js')}}"></script>
 
     <script src="{{ asset('sb/js/main.js')}}"></script>
+    <script src="{{ asset('sb/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('sb/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+
+    <script src="{{ asset('sb/js/demo/datatables-demo.js') }}"></script>
 
   </body>
 

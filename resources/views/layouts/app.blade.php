@@ -74,7 +74,7 @@
         </nav>
 
         <main class="py-4">
-            @include('flashmessage')
+            {{-- @include('flashmessage') --}}
             @yield('content')
         </main>
     </div>

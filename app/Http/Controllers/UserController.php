@@ -40,9 +40,10 @@ class UserController extends Controller
     {
         $validator = $request-> validate([
             'nama_user' => 'required|string',
-            'username' => 'required|string',
-            'email' => 'required|string',
+            'username' => 'required|string|min:5',
+            'email' => 'required|string|email|unique:users',
             'password' => 'required|string',
+            'password_confir' => 'required|same:password',
      
         ]);
 
