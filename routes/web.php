@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DetailUserController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -56,3 +57,5 @@ Route::get('../home/', [App\Http\Controllers\HomeController::class, 'index'])->n
 // Route:: get ('/page/user', [UserController::class, 'index']) ;
 // Route::get('/page/user', [UserController::class,'index']);
 Route::resource('page/user', UserController::class);
+
+Route::resource('page/detailuser', DetailUserController::class);

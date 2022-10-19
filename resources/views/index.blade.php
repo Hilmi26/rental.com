@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('sb/fonts/icomoon/style.css')}}">
     
 
-    <link rel="stylesheet" href="{{ asset('sb/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('sb/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('sb/css/bootstrap-datepicker.css')}}">
     <link rel="stylesheet" href="{{ asset('sb/css/jquery.fancybox.min.css')}}">
     <link rel="stylesheet" href="{{ asset('sb/css/owl.carousel.min.css')}}">
@@ -21,6 +21,7 @@
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{ asset('sb/css/style.css')}}">
+    {{-- table --}}
     <link href="{{ asset ('sb/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 
   </head>
@@ -61,7 +62,7 @@
 
     <script src="{{ asset('sb/js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{ asset('sb/js/popper.min.js')}}"></script>
-    <script src="{{ asset('sb/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('sb/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{ asset('sb/js/owl.carousel.min.js')}}"></script>
     <script src="{{ asset('sb/js/jquery.sticky.js')}}"></script>
     <script src="{{ asset('sb/js/jquery.waypoints.min.js')}}"></script>
@@ -72,6 +73,7 @@
     <script src="{{ asset('sb/js/aos.js')}}"></script>
 
     <script src="{{ asset('sb/js/main.js')}}"></script>
+    {{-- tabel --}}
     <script src="{{ asset('sb/vendor/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('sb/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 
