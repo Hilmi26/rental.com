@@ -30,7 +30,9 @@ class DetailUserController extends Controller
      */
     public function create()
     {
-        return view ('page/detailuser/tambah');
+        $data = User :: all();
+        
+        return view ('page/detailuser/tambah', compact ('data'));
     }
 
     /**
@@ -41,7 +43,37 @@ class DetailUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd ($request);
+        $validator = $request-> validate([
+            'user_id' => 'required|integer',
+            'telp_user' => 'required|string',
+            'alamat' => 'required|string',
+            'kota' => 'required|string',
+            'provinsi' => 'required|string',
+            'kode_pos' => 'required|integer',
+            'ktp' => 'required|image|max:10000|mimes:jpg',
+            'selfi' => 'required|image|max:10000|mimes:jpg',
+            'profil' => 'required|image|max:10000|mimes:jpg',
+        ]);
+
+        $file = $request->file('ktp')->store('ktp');
+        $file2 = $request->file('selfi')->store('selfi');
+        $file3 = $request->file('profil')->store('profil');
+
+        detail_user :: create ([
+            'user_id' => $request -> user_id,
+            'telp_user' => $request -> telp_user,
+            'alamat' => $request -> alamat,
+            'kota' => $request -> kota,
+            'provinsi' => $request -> provinsi,
+            'kode_pos' => $request -> kode_pos,
+            'ktp' => $file,
+            'wajah_ktp' => $file2,
+            'foto_profil' => $file3,
+        ]);
+
+        return redirect ('page/detailuser');
+        
     }
 
     /**
@@ -63,7 +95,10 @@ class DetailUserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = DB :: select('SELECT * FROM detail_users JOIN users ON detail_users.user_id=users.id');
+        return view ('page/detailuser/edit', compact ('data'));
+
+        // dd($id);
     }
 
     /**

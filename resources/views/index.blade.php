@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('sb/fonts/icomoon/style.css')}}">
     
 
-    <link rel="stylesheet" href="{{ asset('sb/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('sb/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('sb/css/bootstrap-datepicker.css')}}">
     <link rel="stylesheet" href="{{ asset('sb/css/jquery.fancybox.min.css')}}">
     <link rel="stylesheet" href="{{ asset('sb/css/owl.carousel.min.css')}}">
