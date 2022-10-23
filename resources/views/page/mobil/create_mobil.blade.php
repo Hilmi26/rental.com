@@ -26,11 +26,11 @@
                                         <label>Rental</label>
                                         <input type="text"
                                             class="form-control @error('rental_id') is-invalid @enderror" name="rental_id"
-                                            placeholder="Masukkan Rental" value="1">
+                                            placeholder="Masukkan Rental" value="1" required>
                                     </div>
                                     <div class="form-group">
                                             <label for="foto_mobil">Image</label>
-                                            <input class="form-control" type="file" name="foto_mobil">
+                                            <input class="form-control" type="file" name="foto_mobil" required>
                                     </div>
                                     {{-- <div class="form-group">
                                         <label>Image</label>
@@ -44,30 +44,30 @@
                                         <input type="text"
                                             class="form-control @error('merek') is-invalid @enderror"
                                             name="merek" placeholder="Masukkan Gambar Mobil"
-                                            value="{{ old('merek') }}">
+                                            value="{{ old('merek') }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Plat</label>
                                         <input type="text"
                                             class="form-control @error('plat') is-invalid @enderror" name="plat"
-                                            placeholder="Masukkan Plat Mobil" value="{{ old('plat') }}">
+                                            placeholder="Masukkan Plat Mobil" value="{{ old('plat') }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Warna</label>
                                         <input type="text"
                                             class="form-control @error('warna') is-invalid @enderror" name="warna"
-                                            placeholder="Masukkan Warna Mobil" value="{{ old('warna') }}">
+                                            placeholder="Masukkan Warna Mobil" value="{{ old('warna') }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Tipe</label>
                                         <input type="text"
                                             class="form-control @error('tipe') is-invalid @enderror" name="tipe"
-                                            placeholder="Masukkan Tipe Mobil" value="{{ old('tipe') }}">
+                                            placeholder="Masukkan Tipe Mobil" value="{{ old('tipe') }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Transmisi</label>
                                         <select class="form-control  @error('transmisi') is-invalid @enderror"
-                                            name="transmisi">
+                                            name="transmisi" required>
                                             <option>Pilih Transmisi</option>
                                             <option value="Automatic">Automatic</option>
                                             <option value="Manual">Manual</option>
@@ -77,30 +77,30 @@
                                         <label>Tahun</label>
                                         <input type="number" min="1990"
                                             class="form-control @error('tahun') is-invalid @enderror" name="tahun"
-                                            placeholder="Masukkan Tahun Mobil" value="{{ old('tahun') }}">
+                                            placeholder="Masukkan Tahun Mobil" value="{{ old('tahun') }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Unit</label>
                                         <input type="text"
                                             class="form-control @error('unit') is-invalid @enderror" name="unit"
-                                            placeholder="Masukkan Unit Mobil" value="{{ old('unit') }}">
+                                            placeholder="Masukkan Unit Mobil" value="{{ old('unit') }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Harga Sewa</label>
                                         <input type="text"
                                             class="form-control @error('harga_sewa') is-invalid @enderror" name="harga_sewa"
-                                            placeholder="Masukkan harga sewa Mobil" value="{{ old('harga_sewa') }}">
+                                            placeholder="Masukkan harga sewa Mobil" value="{{ old('harga_sewa') }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label>History Penyewaan</label>
                                         <input type="text"
                                             class="form-control @error('history_penyewaan') is-invalid @enderror" name="history_penyewaan"
-                                            placeholder="Masukkan harga sewa Mobil" value="{{ old('history_penyewaan') }}">
+                                            placeholder="Masukkan harga sewa Mobil" value="{{ old('history_penyewaan') }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Status Unit</label>
                                         <select class="form-control  @error('status_unit') is-invalid @enderror"
-                                            name="status_unit">
+                                            name="status_unit" required>
                                             <option>Pilih Status Unit</option>
                                             <option value="Ready">Ready</option>
                                             <option value="Dalam Peminjaman">Dalam Peminjaman</option>
