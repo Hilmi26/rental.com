@@ -1,6 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MobilController;
+use App\Http\Controllers\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +52,20 @@ Route::get('single', function () {
 Route::get('testimonials', function () {
     return view('testimonials');
 });
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route::get('page/mobil/', function () {
+//     return view('page/mobil/mobil');
+// });
+
+Route::get('/mobil', [MobilController::class,'index']);
+Route::get('/create_mobil', [MobilController::class,'create']);
+Route::post('/mobil', [MobilController::class,'store']);
+
+
+Route::get('/download', [MobilController::class,'export']);
+
+
+// Route::put('/mobil/{id}', [MobilController::class, 'update']);
