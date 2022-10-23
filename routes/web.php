@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\DetailUserController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MobilController;
@@ -52,9 +54,10 @@ Route::get('single', function () {
 Route::get('testimonials', function () {
     return view('testimonials');
 });
-// Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Route::get('page/mobil/', function () {
 //     return view('page/mobil/mobil');
@@ -69,3 +72,11 @@ Route::get('/download', [MobilController::class,'export']);
 
 
 // Route::put('/mobil/{id}', [MobilController::class, 'update']);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route:: get ('/page/user', [UserController::class, 'index']) ;
+// Route::get('/page/user', [UserController::class,'index']);
+Route::resource('page/user', UserController::class);
+
+Route::resource('page/detailuser', DetailUserController::class);
