@@ -46,9 +46,9 @@
 
               {{-- <i class="fa-solid fa-pipe"></i> --}}
 
-              {{-- <a href="{{ url ('deletesiswa/'.$item->id)}}" class="btn btn-danger btn-sm mb-3">
-                <i class="fa-solid fa-trash"></i>
-              </a> --}}
+              <a href="{{ url ('deleteuser/'.$item->id)}}" class="btn btn-danger btn-sm mb-3">
+                Hapus
+              </a>
 
               {{-- <form action="{{ route('siswa.destroy', $item->id)}}" method="post">
                 @csrf

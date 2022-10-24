@@ -118,6 +118,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // dd($id);
+        $data = User :: findOrFail ($id) ;
+        $data->delete();
+    
+        return redirect('page/user') ->with ('success', 'Data Berhasil Dihapus');
     }
 }

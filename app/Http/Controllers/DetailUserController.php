@@ -15,6 +15,10 @@ class DetailUserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $data = DB :: select('SELECT * FROM detail_users JOIN users ON detail_users.user_id=users.id');
@@ -95,7 +99,10 @@ class DetailUserController extends Controller
      */
     public function edit($id)
     {
-        $data = DB :: select('SELECT * FROM detail_users JOIN users ON detail_users.user_id=users.id');
+        
+        
+        $data = detail_user :: findOrFail ($id);;
+        // $data = DB :: select('SELECT * FROM detail_users JOIN users ON detail_users.user_id=users.id');
         return view ('page/detailuser/edit', compact ('data'));
 
         // dd($id);

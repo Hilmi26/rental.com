@@ -9,17 +9,17 @@
         </ul>
     </div>
     @endif
-    <form action = "{{ route ('detailuser.store')}}" method = "POST" enctype="multipart/form-data">
+    <form action = "{{ url ('page/detailuser/'.$data->id)}}" method = "POST" enctype="multipart/form-data">
     @csrf
     @method('put') 
     
         <div class="form-group">
             <label >Nama</label>
-            <input type="number" class="form-control @error('telp_user') is-invalid @enderror" name="telp_user"  value="{{$data->nama_user}}">
+            <input type="text" class="form-control @error('user_id') is-invalid @enderror" name="user_id"  value="{{$data->id}}">
         </div>
         <div class="form-group">
             <label >No HP</label>
-            <input type="number" class="form-control @error('telp_user') is-invalid @enderror" name="telp_user"  value="{{$data->telp_user}}">
+            <input type="text" class="form-control @error('telp_user') is-invalid @enderror" name="telp_user"  value="{{$data->telp_user}}">
         </div>
 
         <div class="form-group">
