@@ -100,9 +100,9 @@ class MobilController extends Controller
     public function edit($id)
     {
         //
-        $mobil = MObil::with('rental')->find($id); //relasi siswa dan sekolah
-        $rental = rental::where('id', '!=', $siswa->rental_id)->get(['id', 'nama_sekolah']); //mengambil id dan nama sekolah selain id sekolah yang dimiliki siswa
-        return view('/page/edit', ['mobil' => $mobil, 'rental' => $rental]); //mengoper data siswa dan sekolah ke halaman view edit
+        $mobil = Mobil::with('rental')->find($id); //relasi mobil dan rental
+        $rental = rental::where('id', '!=', $mobil->rental_id)->get(['id', 'nama_rental']); //mengambil id dan nama rental selain id rental yang dimiliki mobil
+        return view('/page/edit', ['mobil' => $mobil, 'rental' => $rental]); //mengoper data mobil dan rental ke halaman view edit
     }
 
     /**
@@ -132,6 +132,7 @@ class MobilController extends Controller
     }
 
     public function export(){
-        return Excel::download(new MobilExport, 'daftarmobil.xlsx');
+        // return Excel::download(new MobilExport, 'daftarmobil.xlsx');
+        return (new MobilExport)->download('invoices.pdf', \Maatwebsite\Excel\Excel::MPDF);
     }
 }

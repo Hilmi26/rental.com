@@ -67,7 +67,6 @@ Route::get('/mobil', [MobilController::class,'index']);
 Route::get('/create_mobil', [MobilController::class,'create']);
 Route::post('/mobil', [MobilController::class,'store']);
 
-
 Route::get('/download', [MobilController::class,'export']);
 
 

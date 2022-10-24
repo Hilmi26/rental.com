@@ -133,7 +133,21 @@
                                     <div class="rent-price mb-2">
                                         <strong>{{ $item->harga_sewa }}</strong><span class="mx-1">/</span>day
                                     </div>
-                                    <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+                                    {{-- <div class="d-block d-md-flex mb-3 border-bottom pb-3 justify-content-between">
+                                        <div class="listing-feature pl-0 col-3">
+                                            <span class="caption">Transmisi:</span>
+                                            <span class="number">{{ $item->transmisi }}</span>
+                                        </div>
+                                        <div class="listing-feature pl-0 col-3">
+                                            <span class="caption">Tipe:</span>
+                                            <span class="number">{{ $item->tipe }}</span>
+                                        </div>
+                                        <div class="listing-feature pl-0 col-3">
+                                            <span class="caption">Tahun:</span>
+                                            <span class="number">{{ $item->tahun }}</span>
+                                        </div>
+                                    </div> --}}
+                                    <div class="d-block d-md-flex mb-3 border-bottom pb-3 justify-content-around">
                                         <div class="listing-feature pr-4">
                                             <span class="caption">Transmisi:</span>
                                             <span class="number">{{ $item->transmisi }}</span>

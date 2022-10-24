@@ -3,12 +3,14 @@
 namespace App\Exports;
 
 use App\Models\mobil;
+use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithMapping;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
 class MobilExport implements FromCollection, WithMapping, WithHeadings
 {
+    use Exportable;
     /**
     * @return \Illuminate\Support\Collection
     */
