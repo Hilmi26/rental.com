@@ -14,9 +14,13 @@
     @method('put') 
     
         <div class="form-group">
+            
             <label >Nama</label>
-            <input type="text" class="form-control @error('user_id') is-invalid @enderror" name="user_id"  value="{{$data->id}}">
+            <input type="hidden" class="form-control @error('user_id') is-invalid @enderror" name="user_id"  value="{{$data->id}}">
+
+            <input type="text" class="form-control @error('user_id') is-invalid @enderror" name="user_id"  value="{{$data->user->nama_user}}">
         </div>
+
         <div class="form-group">
             <label >No HP</label>
             <input type="text" class="form-control @error('telp_user') is-invalid @enderror" name="telp_user"  value="{{$data->telp_user}}">
@@ -46,7 +50,6 @@
             <label >Foto KTP</label>
             <img src="{{ asset('storage/'. $data->ktp )}}" height="100" alt="">
             <input type="file" class="form-control-file" name="ktp">
-            
         </div>
 
         <div class="form-group">

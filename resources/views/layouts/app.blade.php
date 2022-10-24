@@ -57,10 +57,10 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a href="{{ url ('page/detailuser/'.Auth::user()->id. '/edit')}}" class="btn btn-success btn-sm mb-3">
+                                <a class="dropdown-item" href="{{ url ('page/detailuser/'.Auth::user()->id. '/edit')}}">
                                     edit
-                                  </a>
-                                <a href="{{ url ('deleteuser/'.Auth::user()->id)}}" class="btn btn-danger btn-sm mb-3">
+                                </a>
+                                <a class="dropdown-item" href="{{ url ('deleteuser/'.Auth::user()->id)}}">
                                 Hapus akun
                                 </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();

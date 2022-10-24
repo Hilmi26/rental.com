@@ -21,8 +21,8 @@ class DetailUserController extends Controller
     }
     public function index()
     {
-        $data = DB :: select('SELECT * FROM detail_users JOIN users ON detail_users.user_id=users.id');
-        // $data = detail_user::all();
+        // $data = DB :: select('SELECT * FROM detail_users JOIN users ON detail_users.user_id=users.id');
+        $data = detail_user::all();
         return view ('page/detailuser/tabeluser', compact ('data'));
         // dd ($data);
     }
@@ -99,11 +99,13 @@ class DetailUserController extends Controller
      */
     public function edit($id)
     {
+        $data   = detail_user::whereId($id)->first();
+        // $data = detail_user :: findOrFail ($id);
+        $user = User :: find ($id);
         
-        
-        $data = detail_user :: findOrFail ($id);;
+        // $data = detail_user :: findOrFail ($id);
         // $data = DB :: select('SELECT * FROM detail_users JOIN users ON detail_users.user_id=users.id');
-        return view ('page/detailuser/edit', compact ('data'));
+        return view ('page/detailuser/edit', compact ('data', 'user'));
 
         // dd($id);
     }

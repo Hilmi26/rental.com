@@ -30,7 +30,7 @@
         <tr>
             <th scope="row">{{$loop->iteration}}</th>
             <td>{{$item->id}}</td>
-            <td>{{$item->nama_user}}</td>
+            <td>{{$item->user->nama_user}}</td>
             <td>{{$item->telp_user}}</td>
             <td>{{$item->alamat}}</td>
             <td>{{$item->kota}}</td>
