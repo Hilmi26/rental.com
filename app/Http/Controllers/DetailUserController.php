@@ -132,7 +132,9 @@ class DetailUserController extends Controller
             //     'foto_profil' => 'required|image|max:10000|mimes:jpg',
             // ]);
         // dd ($request->file != null);
-        $data = detail_user :: findOrFail ($id);
+        $data = detail_user :: whereId($id)->first();
+        $user = User :: find ($id);
+
         $data ->update([
             'user_id' => $request -> user_id,
             'telp_user' => $request -> telp_user,
@@ -140,23 +142,37 @@ class DetailUserController extends Controller
             'kota' => $request -> kota,
             'provinsi' => $request -> provinsi,
             'kode_pos' => $request -> kode_pos,]);
+        $user ->update([
+            'username' => $request -> username,
+        ]);
 
-        if ($request ->file != null){
+        if ($request ->file() != null){
+
+            if ($request ->file('ktp') != null){
             $file = $request->file('ktp')->store('ktp');
-            $file2 = $request->file('wajah_ktp')->store('selfi');
-            $file3 = $request->file('foto_profil')->store('profil');
-
             $data ->update([
-                // 'user_id' => $request -> user_id,
-                // 'telp_user' => $request -> telp_user,
-                // 'alamat' => $request -> alamat,
-                // 'kota' => $request -> kota,
-                // 'provinsi' => $request -> provinsi,
-                // 'kode_pos' => $request -> kode_pos,
-                'ktp' => $file, 
+                'ktp' => $file]);
+            }
+
+            if ($request ->file('wajah_ktp') != null){
+                $file2 = $request->file('wajah_ktp')->store('selfi');
+         
+            $data ->update([
+                
                 'wajah_ktp' => $file2,
-                'foto_profil' => $file3
-            ]);
+          
+            ]); 
+            }
+
+            if ($request ->file('foto_profil') != null){
+                $file3 = $request->file('foto_profil')->store('profil');
+    
+            $data ->update([
+                
+                'foto_profil' => $file3,
+             
+            ]); 
+            }
         } else {
             $data->update([
                 // 'user_id' => $data -> user_id,

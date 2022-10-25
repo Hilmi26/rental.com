@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\detail_user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $data = detail_user ::all();
         return view('home');
         // if (Auth:: user()->username) {
         //     return redirect ('page/detailuser/create');
