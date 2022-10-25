@@ -64,7 +64,8 @@ class DetailUserController extends Controller
         $file2 = $request->file('selfi')->store('selfi');
         $file3 = $request->file('profil')->store('profil');
 
-        detail_user :: create ([
+        detail_user :: create (
+           [
             'user_id' => $request -> user_id,
             'telp_user' => $request -> telp_user,
             'alamat' => $request -> alamat,
@@ -74,7 +75,7 @@ class DetailUserController extends Controller
             'ktp' => $file,
             'wajah_ktp' => $file2,
             'foto_profil' => $file3,
-        ]);
+       ]);
 
         return redirect ('page/detailuser');
         
@@ -119,7 +120,63 @@ class DetailUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // $validator = $request-> validate([
+            //     'user_id' => 'required|integer',
+            //     'telp_user' => 'required|string',
+            //     'alamat' => 'required|string',
+            //     'kota' => 'required|string',
+            //     'provinsi' => 'required|string',
+            //     'kode_pos' => 'required|integer',
+            //     'ktp' => 'required|image|max:10000|mimes:jpg',
+            //     'wajah_ktp' => 'required|image|max:10000|mimes:jpg',
+            //     'foto_profil' => 'required|image|max:10000|mimes:jpg',
+            // ]);
+        // dd ($request->file != null);
+        $data = detail_user :: findOrFail ($id);
+        $data ->update([
+            'user_id' => $request -> user_id,
+            'telp_user' => $request -> telp_user,
+            'alamat' => $request -> alamat,
+            'kota' => $request -> kota,
+            'provinsi' => $request -> provinsi,
+            'kode_pos' => $request -> kode_pos,]);
+
+        if ($request ->file != null){
+            $file = $request->file('ktp')->store('ktp');
+            $file2 = $request->file('wajah_ktp')->store('selfi');
+            $file3 = $request->file('foto_profil')->store('profil');
+
+            $data ->update([
+                // 'user_id' => $request -> user_id,
+                // 'telp_user' => $request -> telp_user,
+                // 'alamat' => $request -> alamat,
+                // 'kota' => $request -> kota,
+                // 'provinsi' => $request -> provinsi,
+                // 'kode_pos' => $request -> kode_pos,
+                'ktp' => $file, 
+                'wajah_ktp' => $file2,
+                'foto_profil' => $file3
+            ]);
+        } else {
+            $data->update([
+                // 'user_id' => $data -> user_id,
+                // 'telp_user' => $data -> telp_user,
+                // 'alamat' => $data -> alamat,
+                // 'kota' => $data -> kota,
+                // 'provinsi' => $data -> provinsi,
+                // 'kode_pos' => $data -> kode_pos,
+                'ktp' =>$data->ktp, 
+                'wajah_ktp' =>$data->wajah_ktp,
+                'foto_profil' =>$data->foto_profil,
+
+            ]);
+
+            return redirect('page/detailuser');
+            // ->with('error', 'Tidak Ada Yang di Rubah');
+        }
+
+        return redirect('page/detailuser') ;
+        // ->with ('success', 'Data Berhasil Dirubah');
     }
 
     /**

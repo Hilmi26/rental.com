@@ -18,7 +18,7 @@
             <label >Nama</label>
             <input type="hidden" class="form-control @error('user_id') is-invalid @enderror" name="user_id"  value="{{$data->id}}">
 
-            <input type="text" class="form-control @error('user_id') is-invalid @enderror" name="user_id"  value="{{$data->user->nama_user}}">
+            <input type="text" class="form-control @error('user_id') is-invalid @enderror" name=""  value="{{$data->user->nama_user}}">
         </div>
 
         <div class="form-group">
@@ -46,22 +46,25 @@
             <input type="number" class="form-control @error('kode_pos') is-invalid @enderror" name="kode_pos" value="{{$data->kode_pos}}">
         </div>
 
-        <div class="form-group">
+        <img src="{{ asset('storage/'. $data->ktp )}}" height="100" alt="" class="mt-2">
+
+        <div class="form-group mt-2">
             <label >Foto KTP</label>
-            <img src="{{ asset('storage/'. $data->ktp )}}" height="100" alt="">
-            <input type="file" class="form-control-file" name="ktp">
+            <input type="file" class="form-control-file" name="ktp"  value="{{$data->ktp}}">
         </div>
 
-        <div class="form-group">
+        <img src="{{ asset('storage/'. $data->wajah_ktp)}}" height="100" alt="" class="mt-2">
+
+        <div class="form-group mt-2">
             <label >Foto Wajah & KTP</label>
-            <img src="{{ asset('storage/'. $data->wajah_ktp)}}" height="100" alt="">
-            <input type="file" class="form-control-file" name="selfi">
+            <input type="file" class="form-control-file mt-1" name="wajah_ktp"  value="{{$data->wajah_ktp}}">
         </div>
 
-        <div class="form-group">
+        <img src="{{ asset('storage/'. $data->foto_profil)}}" height="100" alt="" class="mt-2">
+
+        <div class="form-group mt-2">
             <label >Foto Profil</label>
-            <img src="{{ asset('storage/'. $data->foto_profil)}}" height="100" alt="">
-            <input type="file" class="form-control-file" name="profil">
+            <input type="file" class="form-control-file mt-1" name="foto_profil"  value="{{$data->foto_profil}}">
         </div>
 
         <div class="row justify-content-between">

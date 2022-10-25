@@ -68,7 +68,7 @@ class RegisterController extends Controller
     {
         return User::create([
             'nama_user' => ucwords(strtolower($data ['nama_user'])),
-            'username' => $data ['username'],
+            'username' => ucwords(strtolower($data ['username'])),
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);

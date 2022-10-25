@@ -22,7 +22,7 @@
                             <div class="form-group">
                                 <input type="hidden" class="form-control @error('telp_user') is-invalid @enderror" name="user_id" value="{{ (Auth::user()->id) }}">
                                 <label >Nama</label>
-                                <input type="text" class="form-control @error('telp_user') is-invalid @enderror" name="" value="{{ (Auth::user()->nama_user) }}">
+                                <input type="text" class="form-control @error('telp_user') is-invalid @enderror" name="" value="{{(Auth::user()->username)}}">
                                 {{-- <select class="form-control @error('user_id') is-invalid @enderror" name="user_id" aria-label="Default select example">
                                 <option value="">----</option>
                                 @foreach( $data as $item)
@@ -50,16 +50,15 @@
                                 <label >Kode Pos</label>
                                 <input type="number" class="form-control @error('kode_pos') is-invalid @enderror" name="kode_pos" placeholder="Masukkan Kode Pos" value="{{ old('kode_pos')}}">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label >Foto KTP</label>
                                 <input type="file" class="form-control-file" name="ktp" placeholder="Masukkan Kode Pos">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label >Foto Wajah & KTP</label>
                                 <input type="file" class="form-control-file" name="selfi">
-                                
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label >Foto Profil</label>
                                 <input type="file" class="form-control-file" name="profil">
                             </div>

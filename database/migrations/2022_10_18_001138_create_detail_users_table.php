@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('detail_users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')-> constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('telp_user');
             $table->string('alamat');
             $table->string('kota');
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('kode_pos');
             $table->string('ktp');
             $table->string('wajah_ktp');
-            $table->string('foto_profil')->nullable();
+            $table->string('foto_profil');
             $table->timestamps();
         });
     }

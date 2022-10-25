@@ -45,9 +45,7 @@ class UserController extends Controller
             'password' => 'required|string',
             'password_confir' => 'required|same:password',
      
-        ]);
-
-    
+        ]);    
         User :: create (
             [
                 'nama_user' => $request -> nama_user,
@@ -56,7 +54,6 @@ class UserController extends Controller
                 'password' => $request -> password,
                     
             ]
-
         ) ;
 
         return redirect('page/user')->with('success', 'Data berhasil ditambahkan');

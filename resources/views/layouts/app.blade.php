@@ -58,7 +58,7 @@
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ url ('page/detailuser/'.Auth::user()->id. '/edit')}}">
-                                    edit
+                                Edit
                                 </a>
                                 <a class="dropdown-item" href="{{ url ('deleteuser/'.Auth::user()->id)}}">
                                 Hapus akun
