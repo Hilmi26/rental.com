@@ -1,5 +1,4 @@
-@extends('index')
-@section('main')
+
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -84,4 +83,3 @@
             </div>
         </div>
     </div>
-@endsection

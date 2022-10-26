@@ -1,328 +1,158 @@
-<!doctype html>
-<html lang="en">
-
-  <head>
-    <title>CarRental &mdash; Free Website Template by Colorlib</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{ asset('sb/fonts/icomoon/style.css')}}">
-
-    <link rel="stylesheet" href="{{ asset('sb/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('sb/css/bootstrap-datepicker.css')}}">
-    <link rel="stylesheet" href="{{ asset('sb/css/jquery.fancybox.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('sb/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('sb/css/owl.theme.default.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('sb/fonts/flaticon/font/flaticon.css')}}">
-    <link rel="stylesheet" href="{{ asset('sb/css/aos.css')}}">
-
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="{{ asset('sb/css/style.css')}}">
-
-  </head>
-
-  <body>
-
-    
-    <div class="site-wrap" id="home-section">
-
-      <div class="site-mobile-menu site-navbar-target">
-        <div class="site-mobile-menu-header">
-          <div class="site-mobile-menu-close mt-3">
-            <span class="icon-close2 js-menu-toggle"></span>
-          </div>
-        </div>
-        <div class="site-mobile-menu-body"></div>
+@include('../layouts/navbar')
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('{{ asset('/sb')}}/images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+      <div class="col-md-9 ftco-animate pb-5">
+        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About us <i class="ion-ios-arrow-forward"></i></span></p>
+        <h1 class="mb-3 bread">About Us</h1>
       </div>
+    </div>
+  </div>
+</section>
 
+<section class="ftco-section ftco-about">
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url({{ asset('/sb')}}/images/about.jpg);">
+      </div>
+      <div class="col-md-6 wrap-about ftco-animate">
+        <div class="heading-section heading-section-white pl-md-5">
+          <span class="subheading">About us</span>
+          <h2 class="mb-4">Welcome to Carbook</h2>
 
-
-      <header class="site-navbar site-navbar-target" role="banner">
-
-        <div class="container">
-          <div class="row align-items-center position-relative">
-
-            <div class="col-3">
-              <div class="site-logo">
-                <a href="index.html"><strong>CarRental</strong></a>
-              </div>
-            </div>
-
-            <div class="col-9  text-right">
-              
-              <span class="d-inline-block d-lg-none"><a href="#" class=" site-menu-toggle js-menu-toggle py-5 "><span class="icon-menu h3 text-black"></span></a></span>
-
-              <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-                <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li><a href="index" class="nav-link">Home</a></li>
-                  <li><a href="listing" class="nav-link">Listing</a></li>
-                  <li><a href="testimonials" class="nav-link">Testimonials</a></li>
-                  <li><a href="blog" class="nav-link">Blog</a></li>
-                  <li class="active"><a href="about" class="nav-link">About</a></li>
-                  <li><a href="contact" class="nav-link">Contact</a></li>
-                </ul>
-              </nav>
-            </div>
-
-            
-          </div>
-        </div>
-
-      </header>
-
-      
-      <div class="hero inner-page" style="background-image: url('sb/images/hero_1_a.jpg');">
-        
-        <div class="container">
-          <div class="row align-items-end ">
-            <div class="col-lg-5">
-
-              <div class="intro">
-                <h1><strong>About</strong></h1>
-                <div class="custom-breadcrumbs"><a href="index.html">Home</a> <span class="mx-2">/</span> <strong>About</strong></div>
-              </div>
-
-            </div>
-          </div>
+          <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+          <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+          <p><a href="#" class="btn btn-primary py-3 px-4">Search Vehicle</a></p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-    
+<section class="ftco-section ftco-intro" style="background-image: url({{ asset('/sb')}}/images/bg_3.jpg);">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row justify-content-end">
+      <div class="col-md-6 heading-section heading-section-white ftco-animate">
+        <h2 class="mb-3">Do You Want To Earn With Us? So Don't Be Late.</h2>
+        <a href="#" class="btn btn-primary btn-lg">Become A Driver</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 mb-5 mb-lg-0 order-lg-2">
-            <img src="{{ asset('sb/images/hero_2.jpg')}}" alt="Image" class="img-fluid rounded">
+
+<section class="ftco-section testimony-section bg-light">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-7 text-center heading-section ftco-animate">
+        <span class="subheading">Testimonial</span>
+        <h2 class="mb-3">Happy Clients</h2>
+      </div>
+    </div>
+    <div class="row ftco-animate">
+      <div class="col-md-12">
+        <div class="carousel-testimony owl-carousel ftco-owl">
+          <div class="item">
+            <div class="testimony-wrap rounded text-center py-4 pb-5">
+              <div class="user-img mb-2" style="background-image: url({{ asset('/sb')}}/images/person_1.jpg)">
+              </div>
+              <div class="text pt-4">
+                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <p class="name">Roger Scott</p>
+                <span class="position">Marketing Manager</span>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-4 mr-auto">
-            <h2>Car Company</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit suscipit, repudiandae similique accusantium eius nulla quam laudantium sequi.</p>
-            <p>Debitis voluptates corporis saepe molestias tenetur ab quae, quo earum commodi, laborum dolore, fuga aliquid delectus cum ipsa?</p>
+          <div class="item">
+            <div class="testimony-wrap rounded text-center py-4 pb-5">
+              <div class="user-img mb-2" style="background-image: url({{ asset('/sb')}}/images/person_2.jpg)">
+              </div>
+              <div class="text pt-4">
+                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <p class="name">Roger Scott</p>
+                <span class="position">Interface Designer</span>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="testimony-wrap rounded text-center py-4 pb-5">
+              <div class="user-img mb-2" style="background-image: url({{ asset('/sb')}}/images/person_3.jpg)">
+              </div>
+              <div class="text pt-4">
+                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <p class="name">Roger Scott</p>
+                <span class="position">UI Designer</span>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="testimony-wrap rounded text-center py-4 pb-5">
+              <div class="user-img mb-2" style="background-image: url({{ asset('/sb')}}/images/person_1.jpg)">
+              </div>
+              <div class="text pt-4">
+                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <p class="name">Roger Scott</p>
+                <span class="position">Web Developer</span>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="testimony-wrap rounded text-center py-4 pb-5">
+              <div class="user-img mb-2" style="background-image: url({{ asset('/sb')}}/images/person_1.jpg)">
+              </div>
+              <div class="text pt-4">
+                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <p class="name">Roger Scott</p>
+                <span class="position">System Analyst</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="site-section bg-light">
-      <div class="container">
-        <div class="row justify-content-center text-center mb-5 section-2-title">
-          <div class="col-md-6">
-            <h2 class="mb-4">Meet Our Team</h2>
+<section class="ftco-counter ftco-section img" id="section-counter">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text text-border d-flex align-items-center">
+            <strong class="number" data-number="60">0</strong>
+            <span>Year <br>Experienced</span>
           </div>
-        </div>
-        <div class="row align-items-stretch">
-
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="post-entry-1 h-100 person-1">
-              
-                <img src="{{ asset('sb/images/person_1.jpg')}}" alt="Image"
-                 class="img-fluid">
-            
-              <div class="post-entry-1-contents">
-                <span class="meta">Founder</span>
-                <h2>James Doe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="post-entry-1 h-100 person-1">
-              
-                <img src="{{ asset('sb/images/person_2.jpg')}}" alt="Image"
-                 class="img-fluid">
-            
-              <div class="post-entry-1-contents">
-                <span class="meta">Founder</span>
-                <h2>James Doe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="post-entry-1 h-100 person-1">
-              
-                <img src="{{ asset('sb/images/person_3.jpg')}}" alt="Image"
-                 class="img-fluid">
-            
-              <div class="post-entry-1-contents">
-                <span class="meta">Founder</span>
-                <h2>James Doe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="post-entry-1 h-100 person-1">
-              
-                <img src="{{ asset('sb/images/person_4.jpg')}}" alt="Image"
-                 class="img-fluid">
-            
-              <div class="post-entry-1-contents">
-                <span class="meta">Founder</span>
-                <h2>James Doe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="post-entry-1 h-100 person-1">
-              
-                <img src="{{ asset('sb/images/person_5.jpg')}}" alt="Image"
-                 class="img-fluid">
-            
-              <div class="post-entry-1-contents">
-                <span class="meta">Founder</span>
-                <h2>James Doe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="post-entry-1 h-100 person-1">
-              
-                <img src="{{ asset('sb/images/person_1.jpg')}}" alt="Image"
-                 class="img-fluid">
-            
-              <div class="post-entry-1-contents">
-                <span class="meta">Founder</span>
-                <h2>James Doe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-              </div>
-            </div>
-          </div>
-
-
         </div>
       </div>
-    </div>
-
-    <div class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 mb-5 mb-lg-0">
-            <img src="{{ asset('sb/images/hero_1.jpg')}}" alt="Image" class="img-fluid rounded">
+      <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text text-border d-flex align-items-center">
+            <strong class="number" data-number="1090">0</strong>
+            <span>Total <br>Cars</span>
           </div>
-          <div class="col-lg-4 ml-auto">
-            <h2>Our History</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit suscipit, repudiandae similique accusantium eius nulla quam laudantium sequi.</p>
-            <p>Debitis voluptates corporis saepe molestias tenetur ab quae, quo earum commodi, laborum dolore, fuga aliquid delectus cum ipsa?</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text text-border d-flex align-items-center">
+            <strong class="number" data-number="2590">0</strong>
+            <span>Happy <br>Customers</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text d-flex align-items-center">
+            <strong class="number" data-number="67">0</strong>
+            <span>Total <br>Branches</span>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-
-    <div class="site-section bg-primary py-5">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-7 mb-4 mb-md-0">
-            <h2 class="mb-0 text-white">What are you waiting for?</h2>
-            <p class="mb-0 opa-7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
-          </div>
-          <div class="col-lg-5 text-md-right">
-            <a href="#" class="btn btn-primary btn-white">Rent a car now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-      
-      <footer class="site-footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3">
-              <h2 class="footer-heading mb-4">About Us</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-              <ul class="list-unstyled social">
-                <li><a href="#"><span class="icon-facebook"></span></a></li>
-                <li><a href="#"><span class="icon-instagram"></span></a></li>
-                <li><a href="#"><span class="icon-twitter"></span></a></li>
-                <li><a href="#"><span class="icon-linkedin"></span></a></li>
-              </ul>
-            </div>
-            <div class="col-lg-8 ml-auto">
-              <div class="row">
-                <div class="col-lg-3">
-                  <h2 class="footer-heading mb-4">Quick Links</h2>
-                  <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
-                </div>
-                <div class="col-lg-3">
-                  <h2 class="footer-heading mb-4">Resources</h2>
-                  <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
-                </div>
-                <div class="col-lg-3">
-                  <h2 class="footer-heading mb-4">Support</h2>
-                  <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
-                </div>
-                <div class="col-lg-3">
-                  <h2 class="footer-heading mb-4">Company</h2>
-                  <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row pt-5 mt-5 text-center">
-            <div class="col-md-12">
-              <div class="border-top pt-5">
-                <p>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>.Downloaded from <a href="https://themeslab.org/" target="_blank">Themeslab</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              </p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </footer>
-
-    </div>
-
-    <script src="{{ asset('sb/js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{ asset('sb/js/popper.min.js')}}"></script>
-    <script src="{{ asset('sb/js/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('sb/js/owl.carousel.min.js')}}"></script>
-    <script src="{{ asset('sb/js/jquery.sticky.js')}}"></script>
-    <script src="{{ asset('sb/js/jquery.waypoints.min.js')}}"></script>
-    <script src="{{ asset('sb/js/jquery.animateNumber.min.js')}}"></script>
-    <script src="{{ asset('sb/js/jquery.fancybox.min.js')}}"></script>
-    <script src="{{ asset('sb/js/jquery.easing.1.3.js')}}"></script>
-    <script src="{{ asset('sb/js/bootstrap-datepicker.min.js')}}"></script>
-    <script src="{{ asset('sb/js/aos.js')}}"></script>
-
-    <script src="{{ asset('sb/js/main.js')}}"></script>
-
-  </body>
-
-</html>
+@include('../layouts/footer')

@@ -37,6 +37,10 @@ Route::get('blog', function () {
     return view('blog');
 });
 
+Route::get('car', function () {
+    return view('car');
+});
+
 Route::get('contact', function () {
     return view('contact');
 });
@@ -49,12 +53,12 @@ Route::get('main', function () {
     return view('main');
 });
 
-Route::get('single', function () {
-    return view('single');
+Route::get('pricing', function () {
+    return view('pricing');
 });
 
-Route::get('testimonials', function () {
-    return view('testimonials');
+Route::get('services', function () {
+    return view('services');
 });
 
 Auth::routes();
