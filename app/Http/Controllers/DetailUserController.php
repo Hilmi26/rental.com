@@ -77,7 +77,7 @@ class DetailUserController extends Controller
             'foto_profil' => $file3,
        ]);
 
-        return redirect ('page/detailuser');
+        return redirect ('/index');
         
     }
 

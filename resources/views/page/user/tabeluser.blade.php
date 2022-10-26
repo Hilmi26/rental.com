@@ -11,7 +11,7 @@
     </div>
   </div>
 </section>
-<div class="mt-5">
+<div class="mt-5 mb-5">
 <a href="{{ route ('user.create')}}" class="btn btn-primary btn-sm mb-3">Tambah Data</a>
 
 <table class="table text-center text-warning bg-dark" id="dataTable">
@@ -38,7 +38,6 @@
             <td>{{$item->email}}</td>
             <td>{{$item->created_at}}</td>
             <td>{{$item->updated_at}}</td>
-            {{-- <td>{{$item->nama_sekolah}}</td> --}}
             <td colspan="2">
 
               {{-- <a href="{{ url ('siswa/edit')}}/{{$item->id}}" class="btn btn-success btn-sm mb-3">

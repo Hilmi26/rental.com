@@ -84,9 +84,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="{{ asset('/sb')}}/js/google-map.js"></script>
 <script src="{{ asset('/sb')}}/js/main.js"></script>
 {{-- tabel --}}
-<script src="{{ asset('sb/vendor/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('sb/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('sb/js/demo/datatables-demo.js') }}"></script>
+<script src="{{ asset('/sb')}}/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="{{ asset('/sb')}}/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="{{ asset('/sb')}}/js/demo/datatables-demo.js"></script>
   
 </body>
 </html>
