@@ -2,7 +2,7 @@
 
 @section('main')
 
-<div class="mt-5">
+<div class="">
 <a href="{{ route ('user.create')}}" class="btn btn-primary btn-sm mb-3">Tambah Data</a>
 
 <table class="table text-center text-warning bg-dark" id="dataTable">

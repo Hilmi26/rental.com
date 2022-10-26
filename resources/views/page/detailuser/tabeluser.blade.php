@@ -2,7 +2,7 @@
 
 @section('main')
 
-<div class="mt-5">
+<div class="">
 <a href="{{ route ('detailuser.create')}}" class="btn btn-primary btn-sm mb-3">Tambah Data</a>
 
 <table class="table text-center text-warning bg-dark" id="dataTable">
@@ -30,7 +30,7 @@
         <tr>
             <th scope="row">{{$loop->iteration}}</th>
             <td>{{$item->id}}</td>
-            <td>{{$item->user->nama_user}}</td>
+            <td>{{$item->user->username}}</td>
             <td>{{$item->telp_user}}</td>
             <td>{{$item->alamat}}</td>
             <td>{{$item->kota}}</td>

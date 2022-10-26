@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('sb/fonts/icomoon/style.css')}}">
-    
     <link rel="stylesheet" href="{{ asset('sb/bootstrap/css/bootstrap.min.css')}}">
     {{-- <link rel="stylesheet" href="{{ asset('sb/css/bootstrap.min.css')}}"> --}}
     <link rel="stylesheet" href="{{ asset('sb/css/bootstrap-datepicker.css')}}">
@@ -23,6 +22,20 @@
     <link rel="stylesheet" href="{{ asset('sb/css/style.css')}}">
     {{-- table --}}
     <link href="{{ asset ('sb/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+    
+     <!-- Google Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link
+       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+       rel="stylesheet"
+     />
+ 
+     <!-- Bootstrap Icons -->
+     <link
+       rel="stylesheet"
+       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+     />
 
   </head>
 
@@ -46,7 +59,7 @@
       {{-- include navbar e --}}
 
       {{-- include tampilan s --}}
-      <div class="container-fluid p-5 mt-5 ">
+      <div class="container-fluid mt-5">
         {{-- @include('tampil') --}}
         {{-- @include('flashmessage') --}}
         @yield('main')
@@ -63,7 +76,7 @@
     <script src="{{ asset('sb/js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{ asset('sb/js/popper.min.js')}}"></script>
     <script src="{{ asset('sb/bootstrap/js/bootstrap.min.js')}}"></script>
-    <link src="{{ asset('sb/bootstrap/css/bootstrap.min.css')}}">
+    
     <script src="{{ asset('sb/js/owl.carousel.min.js')}}"></script>
     <script src="{{ asset('sb/js/jquery.sticky.js')}}"></script>
     <script src="{{ asset('sb/js/jquery.waypoints.min.js')}}"></script>
