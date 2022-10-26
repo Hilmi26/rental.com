@@ -3,7 +3,7 @@
 @section('main')
 
 <div class="mt-5">
-    <a href="{{ route ('rental.create')}}" class="btn btn-primary btn-sm mb-3">Tambah Data</a>
+    <a href="{{ route('rental.create')}}" class="btn btn-primary btn-sm mb-3">Tambah Data</a>
 
     <table class="table text-center text-warning bg-dark" id="dataTable">
         <thead>

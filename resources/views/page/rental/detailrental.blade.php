@@ -36,7 +36,7 @@
                 <td>{{$item->kota}}</td>
                 <td>{{$item->provinsi}}</td>
                 <td>{{$item->kode_pos}}</td>
-                 <td><img src="{{ asset('storage/'.$item->ktp)}}" width="70px" class="rounded"></td>
+                <td><img src="{{ asset('storage/'.$item->ktp)}}" width="70px" class="rounded"></td>
                 <td><img src="{{ asset('storage/'.$item->wajah_ktp)}}" width="70px" class="rounded"></td>
                 <td><img src="{{ asset('storage/'.$item->koordinat)}}" width="70px" class="rounded"></td>
                 <td><img src="{{ asset('storage/'.$item->foto_profil)}}" width="70px" class="rounded"></td>

@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class rental extends Model
 {
     use HasFactory;
+
+    // protected $table = 'rental';
+    protected $guarded = ['id'];
+
+    public function detailrental()
+    {
+        // return $this->belongsTo(detail_rental::class);
+        return $this->hasMany(detail_rental::class);
+    }
 }

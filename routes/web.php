@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\detailRentalController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DetailUserController;
 use App\Http\Controllers\UserController;
@@ -7,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MobilController;
 use App\Http\Controllers\Excel;
+use App\Http\Controllers\rentalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,3 +82,7 @@ Route::resource('page/user', UserController::class);
 Route::get('deleteuser/{id}', [UserController::class, 'destroy'])->name('deleteuser');
 
 Route::resource('page/detailuser', DetailUserController::class);
+
+Route::resource('rental', rentalController::class);
+Route::resource('detail_rental', detailRentalController::class);
+Route::get('deleterental/{id}', [rentalController::class, 'destroy'])->name('deleterental');

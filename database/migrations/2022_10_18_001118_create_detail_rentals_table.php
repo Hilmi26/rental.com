@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('detail_rentals', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('rental_id')->constrained();
+            $table->foreignId('rental_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('telp_rental');
             $table->string('alamat');
             $table->string('kota');
