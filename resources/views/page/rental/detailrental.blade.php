@@ -41,9 +41,7 @@
                 <td><img src="{{ asset('storage/'.$item->koordinat)}}" width="70px" class="rounded"></td>
                 <td><img src="{{ asset('storage/'.$item->foto_profil)}}" width="70px" class="rounded"></td>
                 <td colspan="2">
-                    <a href="{{ route('detail_rental.edit',$item->id) }}" class="btn btn-success btn-sm mb-3">
-                        edit
-                    </a>
+                    <a href="{{ route('detail_rental.edit',$item->id) }}" class="btn btn-success">edit</a>
                     <a href="{{ route('detail_rental.destroy',$item->id) }}" class="btn btn-danger"> Delete</a>
                 </td>
             </tr>

@@ -23,7 +23,7 @@ class DetailUserController extends Controller
     {
         // $data = DB :: select('SELECT * FROM detail_users JOIN users ON detail_users.user_id=users.id');
         $data = detail_user::all();
-        return view ('page/detailuser/tabeluser', compact ('data'));
+        return view('page/detailuser/tabeluser', compact('data'));
         // dd ($data);
     }
 
@@ -34,9 +34,9 @@ class DetailUserController extends Controller
      */
     public function create()
     {
-        $data = User :: all();
-        
-        return view ('page/detailuser/tambah', compact ('data'));
+        $data = User::all();
+
+        return view('page/detailuser/tambah', compact('data'));
     }
 
     /**
@@ -48,7 +48,7 @@ class DetailUserController extends Controller
     public function store(Request $request)
     {
         // dd ($request);
-        $validator = $request-> validate([
+        $validator = $request->validate([
             'user_id' => 'required|integer',
             'telp_user' => 'required|string',
             'alamat' => 'required|string',
@@ -64,21 +64,21 @@ class DetailUserController extends Controller
         $file2 = $request->file('selfi')->store('selfi');
         $file3 = $request->file('profil')->store('profil');
 
-        detail_user :: create (
-           [
-            'user_id' => $request -> user_id,
-            'telp_user' => $request -> telp_user,
-            'alamat' => $request -> alamat,
-            'kota' => $request -> kota,
-            'provinsi' => $request -> provinsi,
-            'kode_pos' => $request -> kode_pos,
-            'ktp' => $file,
-            'wajah_ktp' => $file2,
-            'foto_profil' => $file3,
-       ]);
+        detail_user::create(
+            [
+                'user_id' => $request->user_id,
+                'telp_user' => $request->telp_user,
+                'alamat' => $request->alamat,
+                'kota' => $request->kota,
+                'provinsi' => $request->provinsi,
+                'kode_pos' => $request->kode_pos,
+                'ktp' => $file,
+                'wajah_ktp' => $file2,
+                'foto_profil' => $file3,
+            ]
+        );
 
-        return redirect ('page/detailuser');
-        
+        return redirect('page/detailuser');
     }
 
     /**
@@ -102,11 +102,11 @@ class DetailUserController extends Controller
     {
         $data   = detail_user::whereId($id)->first();
         // $data = detail_user :: findOrFail ($id);
-        $user = User :: find ($id);
-        
+        $user = User::find($id);
+
         // $data = detail_user :: findOrFail ($id);
         // $data = DB :: select('SELECT * FROM detail_users JOIN users ON detail_users.user_id=users.id');
-        return view ('page/detailuser/edit', compact ('data', 'user'));
+        return view('page/detailuser/edit', compact('data', 'user'));
 
         // dd($id);
     }
@@ -121,57 +121,59 @@ class DetailUserController extends Controller
     public function update(Request $request, $id)
     {
         // $validator = $request-> validate([
-            //     'user_id' => 'required|integer',
-            //     'telp_user' => 'required|string',
-            //     'alamat' => 'required|string',
-            //     'kota' => 'required|string',
-            //     'provinsi' => 'required|string',
-            //     'kode_pos' => 'required|integer',
-            //     'ktp' => 'required|image|max:10000|mimes:jpg',
-            //     'wajah_ktp' => 'required|image|max:10000|mimes:jpg',
-            //     'foto_profil' => 'required|image|max:10000|mimes:jpg',
-            // ]);
+        //     'user_id' => 'required|integer',
+        //     'telp_user' => 'required|string',
+        //     'alamat' => 'required|string',
+        //     'kota' => 'required|string',
+        //     'provinsi' => 'required|string',
+        //     'kode_pos' => 'required|integer',
+        //     'ktp' => 'required|image|max:10000|mimes:jpg',
+        //     'wajah_ktp' => 'required|image|max:10000|mimes:jpg',
+        //     'foto_profil' => 'required|image|max:10000|mimes:jpg',
+        // ]);
         // dd ($request->file != null);
-        $data = detail_user :: whereId($id)->first();
-        $user = User :: find ($id);
+        $data = detail_user::whereId($id)->first();
+        $user = User::find($id);
 
-        $data ->update([
-            'user_id' => $request -> user_id,
-            'telp_user' => $request -> telp_user,
-            'alamat' => $request -> alamat,
-            'kota' => $request -> kota,
-            'provinsi' => $request -> provinsi,
-            'kode_pos' => $request -> kode_pos,]);
-        $user ->update([
-            'username' => $request -> username,
+        $data->update([
+            'user_id' => $request->user_id,
+            'telp_user' => $request->telp_user,
+            'alamat' => $request->alamat,
+            'kota' => $request->kota,
+            'provinsi' => $request->provinsi,
+            'kode_pos' => $request->kode_pos,
+        ]);
+        $user->update([
+            'username' => $request->username,
         ]);
 
-        if ($request ->file() != null){
+        if ($request->file() != null) {
 
-            if ($request ->file('ktp') != null){
-            $file = $request->file('ktp')->store('ktp');
-            $data ->update([
-                'ktp' => $file]);
+            if ($request->file('ktp') != null) {
+                $file = $request->file('ktp')->store('ktp');
+                $data->update([
+                    'ktp' => $file
+                ]);
             }
 
-            if ($request ->file('wajah_ktp') != null){
+            if ($request->file('wajah_ktp') != null) {
                 $file2 = $request->file('wajah_ktp')->store('selfi');
-         
-            $data ->update([
-                
-                'wajah_ktp' => $file2,
-          
-            ]); 
+
+                $data->update([
+
+                    'wajah_ktp' => $file2,
+
+                ]);
             }
 
-            if ($request ->file('foto_profil') != null){
+            if ($request->file('foto_profil') != null) {
                 $file3 = $request->file('foto_profil')->store('profil');
-    
-            $data ->update([
-                
-                'foto_profil' => $file3,
-             
-            ]); 
+
+                $data->update([
+
+                    'foto_profil' => $file3,
+
+                ]);
             }
         } else {
             $data->update([
@@ -181,9 +183,9 @@ class DetailUserController extends Controller
                 // 'kota' => $data -> kota,
                 // 'provinsi' => $data -> provinsi,
                 // 'kode_pos' => $data -> kode_pos,
-                'ktp' =>$data->ktp, 
-                'wajah_ktp' =>$data->wajah_ktp,
-                'foto_profil' =>$data->foto_profil,
+                'ktp' => $data->ktp,
+                'wajah_ktp' => $data->wajah_ktp,
+                'foto_profil' => $data->foto_profil,
 
             ]);
 
@@ -191,7 +193,7 @@ class DetailUserController extends Controller
             // ->with('error', 'Tidak Ada Yang di Rubah');
         }
 
-        return redirect('page/detailuser') ;
+        return redirect('page/detailuser');
         // ->with ('success', 'Data Berhasil Dirubah');
     }
 

@@ -97,9 +97,11 @@ class detailRentalController extends Controller
      */
     public function edit($id)
     {
-        $data = detail_rental::whereId($id)->first();
+        // $data = detail_rental::whereId($id)->first();
+        $data = detail_rental::findOrFail($id);
+        // $rental = rental::all();
         $rental = rental::find($id);
-        return view('page.rental.editDetail', compact('data', 'rental'));
+        return view('page.rental.editDetail', compact('data','rental'));
     }
 
     /**
