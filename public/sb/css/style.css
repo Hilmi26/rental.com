@@ -1,4 +1,15 @@
 /* Base */
+.edit-img{
+    position: absolute;
+    margin-left: 10px;
+    color: #4d4d4d;
+    font-size: 30px;
+    opacity: 50%;
+
+}
+.edit-img:hover{
+    color: rgb(233, 233, 233) !important;
+}
 html {
   overflow-x: hidden; }
 

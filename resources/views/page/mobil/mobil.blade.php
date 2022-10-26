@@ -1,3 +1,5 @@
+{{-- Hilmi --}}
+
 <!doctype html>
 <html lang="en">
 
@@ -23,7 +25,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+        <script src="https://kit.fontawesome.com/f8eb9c4688.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -117,7 +119,10 @@
 
                             <div class="listing d-block  align-items-stretch">
                                 <div class="listing-img h-100 mr-4">
+                                    <a href="/page/mobil/edit_image/{{ $item->id }}" type="button" class="edit-img" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit Image">
 
+                                        <i class="fa-solid fa-square-pen"></i>
+                                    </a>
                                     @if ($item->foto_mobil != '')
                                         <img src="{{ asset('/') }}storage/{{ $item->foto_mobil }}" alt="Image"
                                             class="img-fluid">
@@ -208,7 +213,7 @@
                                             <a href="#" class="btn btn-secondary ">Edit</a>
                                             <a href="#" class="btn btn-danger">Delete</a> --}}
 
-                                            <a href="" type="button" class="btn btn-dark px-3"
+                                            <a href="/page/mobil/edit_mobil/{{ $item->id }}" type="button" class="btn btn-dark px-3"
                                                 data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">
                                                 Edit
                                                 {{-- <i class="ti-file"></i> --}}

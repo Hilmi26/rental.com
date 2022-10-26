@@ -22,6 +22,7 @@ class MobilController extends Controller
     {
         //
         $mobil = Mobil::all();
+        // $mobil = Mobil::all();
         // dd($mobil);
         return view('page/mobil/mobil', compact('mobil'));
     }
@@ -51,7 +52,7 @@ class MobilController extends Controller
 
         if ($request->file('foto_mobil')) {
             $extension = $request->file('foto_mobil')->getClientOriginalExtension(); //menambah original format gambar
-            $newName = $request->merek . '-' . $request->tipe . '-' .now()->timestamp . '.' . $extension; //rename gambar
+            $newName = $request->merek . '-' . $request->tipe . '-' . now()->timestamp . '.' . $extension; //rename gambar
             $image = $request->file('foto_mobil')->storeAs('carImage', $newName);
 
             // dd($image);
@@ -102,7 +103,7 @@ class MobilController extends Controller
         //
         $mobil = Mobil::with('rental')->find($id); //relasi mobil dan rental
         $rental = rental::where('id', '!=', $mobil->rental_id)->get(['id', 'nama_rental']); //mengambil id dan nama rental selain id rental yang dimiliki mobil
-        return view('/page/edit', ['mobil' => $mobil, 'rental' => $rental]); //mengoper data mobil dan rental ke halaman view edit
+        return view('page/mobil/edit_mobil', ['mobil' => $mobil, 'rental' => $rental]); //mengoper data mobil dan rental ke halaman view edit
     }
 
     /**
@@ -116,7 +117,20 @@ class MobilController extends Controller
     {
         //
         $mobil = Mobil::find($id);
-        $mobil->update($request->all());
+        // $mobil->update($request->all());
+        $mobil->rental_id = $request->rental_id;
+
+        $mobil->merek = $request->merek;
+        $mobil->plat = $request->plat;
+        $mobil->warna = $request->warna;
+        $mobil->tipe = $request->tipe;
+        $mobil->transmisi = $request->transmisi;
+        $mobil->tahun = $request->tahun;
+        $mobil->unit = $request->unit;
+        $mobil->history_penyewaan = $request->history_penyewaan;
+        $mobil->harga_sewa = $request->harga_sewa;
+        $mobil->status_unit = $request->status_unit;
+        $mobil->save();
         return redirect('/mobil')->with('Data berhasil diubah');
     }
 
@@ -129,10 +143,34 @@ class MobilController extends Controller
     public function destroy($id)
     {
         //
+        mobil::find($id)->delete();
+        return redirect('/mobil');
     }
 
-    public function export(){
+    public function editImage($id)
+    {
+        //
+        $mobil = Mobil::find($id); //mobil
+        return view('page/mobil/edit_image', ['mobil' => $mobil]); //mengoper data mobil dan rental ke halaman view edit
+    }
+
+    public function updateImage(Request $request, $id)
+    {
+        //
+        $extension = $request->file('foto_mobil')->getClientOriginalExtension(); //menambah original format gambar
+        $newName = $request->merek . '-' . $request->tipe . '-' . now()->timestamp . '.' . $extension; //rename gambar
+        $image = $request->file('foto_mobil')->storeAs('carImage', $newName);
+
+        $mobil = Mobil::find($id);
+        $mobil->foto_mobil = $image;
+        $mobil->save();
+
+        return redirect('/mobil')->with('Gambar berhasil diubah');
+    }
+
+    public function export()
+    {
         // return Excel::download(new MobilExport, 'daftarmobil.xlsx');
-        return (new MobilExport)->download('invoices.pdf', \Maatwebsite\Excel\Excel::MPDF);
+        return (new MobilExport())->download('invoices.pdf', \Maatwebsite\Excel\Excel::MPDF);
     }
 }

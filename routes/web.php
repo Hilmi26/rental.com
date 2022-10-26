@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DetailUserController;
 use App\Http\Controllers\UserController;
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MobilController;
@@ -63,14 +64,20 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //     return view('page/mobil/mobil');
 // });
 
-Route::get('/mobil', [MobilController::class,'index']);
-Route::get('/create_mobil', [MobilController::class,'create']);
-Route::post('/mobil', [MobilController::class,'store']);
 
-Route::get('/download', [MobilController::class,'export']);
+//Hilmi
+//CRUD Mobil
+Route::get('/mobil', [MobilController::class, 'index']);
+Route::get('/create_mobil', [MobilController::class, 'create']);
+Route::post('/mobil', [MobilController::class, 'store']);
+Route::get('/page/mobil/edit_mobil/{id}', [MobilController::class, 'edit']);
+Route::get('/page/mobil/edit_image/{id}', [MobilController::class, 'editImage']);
+Route::delete('/mobil/{id}', [MobilController::class, 'destroy']); //mengarah ke function destroy di MobilController
+Route::resource('mobil', MobilController::class); //update detail mobil
+Route::put('/page/mobil/mobil/{id}', [MobilController::class, 'updateImage']);
 
+Route::get('/download', [MobilController::class, 'export']);
 
-// Route::put('/mobil/{id}', [MobilController::class, 'update']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
