@@ -18,16 +18,16 @@ class DetailRentalSeeder extends Seeder
     public function run()
     {
         $faker = fake ('id_ID');
-        $faker->addProvider(new Gravatar($faker));
+        // $faker->addProvider(new Gravatar($faker));
         for ($i=0; $i < 5; $i++) { 
-            detail_rental :: create ([
+            detail_rental::create ([
                 'telp_rental' =>  $faker ->numerify('+62-############'),
                 'alamat' =>  $faker ->address (),
                 'kota' =>  $faker ->city (),
                 'provinsi' =>  $faker ->citySuffix (),
                 'kode_pos' =>  $faker ->postcode (),
                 // 'ktp' =>  $faker ->image (null, 360, 360, 'animals', true, true, 'cats', true, 'jpg'),
-                'wajah_ktp' =>  $faker->gravatar()
+                // 'wajah_ktp' =>  $faker->gravatar()
                 // 'koordinat' =>  $faker ->image (null, 360, 360, 'animals', true, true, 'cats', true, 'jpg'),
                 // 'foto_profil' =>  $faker ->image (null, 360, 360, 'animals', true, true, 'cats', true, 'jpg'),
             ]);

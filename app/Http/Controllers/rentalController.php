@@ -28,8 +28,8 @@ class rentalController extends Controller
      */
     public function create()
     {
-        $data = detail_rental::all();
-        return view('page.rental.tambahRental', compact('data'));
+        // $data = detail_rental::all();
+        return view('page.rental.tambahRental');
     }
 
     /**
@@ -42,14 +42,21 @@ class rentalController extends Controller
     {
         $validator = $request->validate([
             'nama_rental' => 'required|string',
-            'email' => 'required|string|email|unique:rental',
+            'email' => 'required|string|email|unique:rentals',
             'username' => 'required|string',
             'password' => 'required|string',
-            'password_confir' => 'required|same:password',
+            'password_confir' => 'required|same:password'
         ]);
-
+        
+        // dd($validator);
         rental::create($validator);
-        return redirect('rental')->with('success', 'Data Berhasil Ditambah');
+        // rental::create([
+        //     'nama_rental' => $request -> nama_rental,
+        //         'username' => $request -> username,
+        //         'email' => $request -> email,
+        //         'password' => $request -> password,
+        // ]);
+        return redirect('/rental')->with('success', 'Data Berhasil Ditambah');
     }
 
     /**

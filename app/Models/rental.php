@@ -10,6 +10,7 @@ class rental extends Model
     use HasFactory;
 
     // protected $table = 'rental';
+    // protected $table = [];
     protected $guarded = ['id'];
 
     public function detailrental()

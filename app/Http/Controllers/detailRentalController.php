@@ -74,7 +74,7 @@ class detailRentalController extends Controller
             'koordinat' => $file2,
             'foto_profil' => $file3,
         ]);
-            return redirect('/detail_rental')->with('success', 'data berhasil ditambah');
+        return redirect('/detail_rental')->with('success', 'data berhasil ditambah');
         // dd($request);
     }
 
@@ -97,7 +97,9 @@ class detailRentalController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = detail_rental::whereId($id)->first();
+        $rental = rental::find($id);
+        return view('page.rental.editDetail', compact('data', 'rental'));
     }
 
     /**
@@ -109,7 +111,70 @@ class detailRentalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = detail_rental::whereId($id)->first();
+        $rental = rental::find($id);
+
+        $data->update([
+            'rental_id' => $request->rental_id,
+            'telp_rental' => $request->telp_rental,
+            'alamat' => $request->alamat,
+            'kota' => $request->kota,
+            'provinsi' => $request->provinsi,
+            'kode_pos' => $request->kode_pos,
+        ]);
+        $rental->update([
+            'username' => $request->username,
+        ]);
+
+        // 'ktp' => $file,
+        //     'wajah_ktp' => $file1,
+        //     'koordinat' => $file2,
+        //     'foto_profil' => $file3,
+        if ($request->file() != null) {
+
+            if ($request->file('ktp') != null) {
+                $file = $request->file('ktp')->store('ktp');
+                $data->update([
+                    'ktp' => $file
+                ]);
+            }
+
+            if ($request->file('wajah_ktp') != null) {
+                $file2 = $request->file('wajah_ktp')->store('selfi');
+                $data->update([
+                    'wajah_ktp' => $file2,
+
+                ]);
+            }
+
+            if ($request->file('koordinat') != null) {
+                $file3 = $request->file('koordinat')->store('koordinat');
+                $data->update([
+                    'koordinat' => $file3,
+
+                ]);
+                if ($request->file('foto_profil') != null) {
+                    $file4 = $request->file('foto_profil')->store('profil');
+                    $data->update([
+
+                        'foto_profil' => $file4,
+
+                    ]);
+                }
+            } else {
+                $data->update([
+                    'ktp' => $data->ktp,
+                    'wajah_ktp' => $data->wajah_ktp,
+                    'koordinat' => $data->koordinat,
+                    'foto_profil' => $data->foto_profil,
+
+                ]);
+
+                return redirect('/detailrental');
+            }
+
+            return redirect('/detailrental');
+        }
     }
 
     /**
