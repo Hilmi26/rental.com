@@ -17,7 +17,7 @@ class RentalSeeder extends Seeder
     {
         $faker = fake ('id_ID');
         for ($i=0; $i < 100; $i++) { 
-            rental :: create ([
+            rental::create ([
                 'nama_rental' =>  $faker ->name (),
                 'email' =>  $faker ->email (),
                 'username' =>  $faker ->userName (),

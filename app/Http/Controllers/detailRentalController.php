@@ -7,7 +7,7 @@ use App\Models\rental;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
-
+use Illuminate\Support\Facades\Storage;
 
 class detailRentalController extends Controller
 {
@@ -20,7 +20,7 @@ class detailRentalController extends Controller
     {
         // $data = detail_rental::select('detail_rentals.id', 'rentals.nama_rental')->join('rentals', 'detail_rentals.rental_id', '=', 'rentals.id')->get();
         $data = detail_rental::all();
-        return view('page.rental.detailRental', compact('data'));
+        return view('page.detailrental.detailrental', compact('data'));
     }
 
     /**
@@ -31,7 +31,7 @@ class detailRentalController extends Controller
     public function create()
     {
         $data = rental::all();
-        return view('page.rental.tambahDetail', compact('data'));
+        return view('page.detailrental.tambahDetail', compact('data'));
     }
 
     /**
@@ -97,9 +97,12 @@ class detailRentalController extends Controller
      */
     public function edit($id)
     {
-        $data = detail_rental::whereId($id)->first();
-        $rental = rental::find($id);
-        return view('page.rental.editDetail', compact('data', 'rental'));
+        // $data = detail_rental::whereId($id)->first();
+        // $data = detail_rental::whereId($id)->first();
+        // $rental = rental::find($id);
+        $data = detail_rental::find($id);
+        $rental = rental::all();
+        return view('page.detailrental.editDetail', compact('data', 'rental'));
     }
 
     /**
@@ -111,71 +114,75 @@ class detailRentalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = detail_rental::whereId($id)->first();
-        $rental = rental::find($id);
+        // dd($request);
+        // $data = detail_rental::whereId($id)->first();
+        $data = detail_rental::find($id);
+        // $rental = rental::find($id);
 
-        $data->update([
-            'rental_id' => $request->rental_id,
-            'telp_rental' => $request->telp_rental,
-            'alamat' => $request->alamat,
-            'kota' => $request->kota,
-            'provinsi' => $request->provinsi,
-            'kode_pos' => $request->kode_pos,
+        $validator = $request->validate([
+            'rental_id' => 'required',
+            'telp_rental' => 'required|integer',
+            'alamat' => 'required|string',
+            'kota' => 'required|string',
+            'alamat' => 'required|string',
+            'kota' => 'required|string',
+            'provinsi' => 'required|string',
+            'kode_pos' => 'required|integer'
+            // 'ktp' => 'image|max:10000|mimes:jpg',
+            // 'wajah_ktp' => 'image|max:10000|mimes:jpg',
+            // 'koordinat' => 'image|max:10000|mimes:jpg',
+            // 'foto_profil' => 'image|max:10000|mimes:jpg',
         ]);
-        $rental->update([
-            'username' => $request->username,
-        ]);
+        // $data->update($validator);
+        // dd($validator);
+        if (!$validator) {
+            return redirect()->route('detail_rental.update', $id)->withErrors($validator);
+            // ->withInput();
+        }
 
-        // 'ktp' => $file,
-        //     'wajah_ktp' => $file1,
-        //     'koordinat' => $file2,
-        //     'foto_profil' => $file3,
         if ($request->file() != null) {
 
             if ($request->file('ktp') != null) {
+                $request->validate(['ktp' => 'image|max:10000|mimes:jpg']);
                 $file = $request->file('ktp')->store('ktp');
+                Storage::delete([$data->ktp]);
                 $data->update([
                     'ktp' => $file
+
                 ]);
             }
 
             if ($request->file('wajah_ktp') != null) {
                 $file2 = $request->file('wajah_ktp')->store('selfi');
+                $request->validate(['wajah_ktp' => 'image|max:10000|mimes:jpg']);
+                Storage::delete([$data->wajah_ktp]);
                 $data->update([
                     'wajah_ktp' => $file2,
-
                 ]);
             }
 
             if ($request->file('koordinat') != null) {
                 $file3 = $request->file('koordinat')->store('koordinat');
+                $request->validate(['koordinat' => 'image|max:10000|mimes:jpg']);
+                Storage::delete([$data->koordinat]);
                 $data->update([
                     'koordinat' => $file3,
-
                 ]);
                 if ($request->file('foto_profil') != null) {
                     $file4 = $request->file('foto_profil')->store('profil');
+                    $request->validate(['foto_profil' => 'image|max:10000|mimes:jpg']);
+                    Storage::delete([$data->foto_profil]);
                     $data->update([
-
                         'foto_profil' => $file4,
 
                     ]);
                 }
-            } else {
-                $data->update([
-                    'ktp' => $data->ktp,
-                    'wajah_ktp' => $data->wajah_ktp,
-                    'koordinat' => $data->koordinat,
-                    'foto_profil' => $data->foto_profil,
-
-                ]);
-
-                return redirect('/detailrental');
-            }
-
-            return redirect('/detailrental');
+            } 
         }
+        $data->update($validator);
+        return redirect('/detail_rental');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -185,6 +192,13 @@ class detailRentalController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = detail_rental::findorFail($id);
+        // dd($data->ktp);
+        // $file_path = app_path() . '/images/news/';
+        $data->delete();
+        Storage::delete([$data->ktp,$data->wajah_ktp,$data->koordinat,$data->foto_profil]);
+
+        return redirect('/detail_rental')->with('success', 'Data berhasil Dihapus');
+        // unlink($file_path);
     }
 }

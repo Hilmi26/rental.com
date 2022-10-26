@@ -3,7 +3,7 @@
 @section('main')
 
 <div class="mt-5">
-    <a href="{{ route ('detail_rental.create')}}" class="btn btn-primary btn-sm mb-3">Tambah Data</a>
+    <a href="{{ route('detail_rental.create')}}" class="btn btn-primary btn-sm mb-3">Tambah Data</a>
 
     <table class="table text-center text-warning bg-secondary" id="datatable" name="datatable">
         <thead>
@@ -44,7 +44,7 @@
                     <a href="{{ route('detail_rental.edit',$item->id) }}" class="btn btn-success btn-sm mb-3">
                         edit
                     </a>
-                    <a href="{{ route('detail_rental.destroy',$item->id) }}" class="btn btn-danger"> Delete</a>
+                    <a href="{{ route('deletedetail',$item->id) }}" class="btn btn-danger"> Delete</a>
                 </td>
             </tr>
             @endforeach

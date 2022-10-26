@@ -90,3 +90,4 @@ Route::resource('page/detailuser', DetailUserController::class);
 Route::resource('rental', rentalController::class);
 Route::resource('detail_rental', detailRentalController::class);
 Route::get('deleterental/{id}', [rentalController::class, 'destroy'])->name('deleterental');
+Route::get('deletedetail/{id}', [detailRentalController::class, 'destroy'])->name('deletedetail');
