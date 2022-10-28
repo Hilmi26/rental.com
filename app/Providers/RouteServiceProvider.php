@@ -18,7 +18,8 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     public const HOME = '/home';
-    public const DETAILUSER = '/page/detailuser/create';
+    public const LOGIN = '/login';
+    // public const DETAILUSER = '/page/detailuser/create';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
