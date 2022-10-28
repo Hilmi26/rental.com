@@ -8,42 +8,6 @@
 <div class="content">
     <div class="container">
         <div class="row">
-            <div class="col-md-5 ml-auto">
-                <div class="info-area info-horizontal mt-5">
-                    <div class="icon icon-primary">
-                        <i class="now-ui-icons media-2_sound-wave"></i>
-                    </div>`
-
-                    <div class="description">
-                        <h5 class="info-title">{{ __('Marketing') }}</h5>
-                        <p class="description">
-                            {{ __("We've created the marketing campaign of the website. It was a very interesting collaboration.") }}
-                        </p>
-                    </div>
-                </div>
-                <div class="info-area info-horizontal">
-                    <div class="icon icon-primary">
-                        <i class="now-ui-icons media-1_button-pause"></i>
-                    </div>
-                    <div class="description">
-                        <h5 class="info-title">{{ __('Fully Coded in HTML5') }}</h5>
-                        <p class="description">
-                            {{ __("We've developed the website with HTML5 and CSS3. The client has access to the code using GitHub.") }}
-                        </p>
-                    </div>
-                </div>
-                <div class="info-area info-horizontal">
-                    <div class="icon icon-info">
-                        <i class="now-ui-icons users_single-02"></i>
-                    </div>
-                    <div class="description">
-                        <h5 class="info-title">{{ __('Built Audience') }}</h5>
-                        <p class="description">
-                            {{ __('There is also a Fully Customizable CMS Admin Dashboard for this product.') }}
-                        </p>
-                    </div>
-                </div>
-            </div>
             <div class="col-md-4 mr-auto">
                 <div class="card card-signup text-center">
                     <div class="card-header ">
@@ -52,8 +16,8 @@
                             <button class="btn btn-icon btn-round btn-twitter">
                                 <i class="fab fa-twitter"></i>
                             </button>
-                            <button class="btn btn-icon btn-round btn-dribbble">
-                                <i class="fab fa-dribbble"></i>
+                            <button class="btn btn-icon btn-round btn-google">
+                                <i class="fab fa-google"></i>
                             </button>
                             <button class="btn btn-icon btn-round btn-facebook">
                                 <i class="fab fa-facebook-f"></i>
