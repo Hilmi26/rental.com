@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Request;
 
 class UserController extends Controller
 {
@@ -16,7 +17,6 @@ class UserController extends Controller
      */
     public function index(User $model)
     {
-<<<<<<< HEAD
         $data = User::all();
         
     
@@ -130,8 +130,6 @@ class UserController extends Controller
         $data->delete();
     
         return redirect('page/user') ->with ('success', 'Data Berhasil Dihapus');
-=======
-        return view('users.index', ['users' => $model->paginate(15)]);
->>>>>>> 78621233d5b2be60a01ad50aeb64c483ab3b327a
+        // return view('users.index', ['users' => $model->paginate(15)]);
     }
 }
