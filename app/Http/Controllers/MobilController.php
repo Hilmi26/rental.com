@@ -24,7 +24,7 @@ class MobilController extends Controller
         $mobil = Mobil::all();
         // $mobil = Mobil::all();
         // dd($mobil);
-        return view('page/mobil/mobil', compact('mobil'));
+        return view('page/mobil/mobil', compact('mobile'));
     }
 
     /**

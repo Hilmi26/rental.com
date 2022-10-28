@@ -38,7 +38,9 @@
               <div class="icon mr-3">
                 <span class="icon-envelope-o"></span>
               </div>
-              <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+              <p><span>Email:</span> 
+                <label for="" placeholder="{{ (Auth::user()->email) }}"></label>
+                <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
             </div>
           </div>
         </div>

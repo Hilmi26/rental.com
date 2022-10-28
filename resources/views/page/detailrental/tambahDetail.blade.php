@@ -1,4 +1,4 @@
-@extends('index')
+@extends('tampilan')
 
 @section('main')
 <div>

@@ -1,4 +1,4 @@
-@extends('index')
+@extends('tampilan')
 @section('main')
 
     <form action = "{{ route('rental.update', $data->id)}}" method = "POST" method="POST" enctype="multipart/form-data">
