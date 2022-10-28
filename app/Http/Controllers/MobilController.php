@@ -168,6 +168,12 @@ class MobilController extends Controller
         return redirect('/mobil')->with('Gambar berhasil diubah');
     }
 
+    public function detailMobil($id){
+
+        $mobil = Mobil::find($id); //mobil
+        return view('page/mobil/detail_mobil', ['mobil' => $mobil]); //mengoper data mobil dan rental ke halaman view edit
+    }
+
     public function export()
     {
         // return Excel::download(new MobilExport, 'daftarmobil.xlsx');

@@ -1,18 +1,20 @@
 {{-- Hilmi --}}
-<!DOCTYPE html>
-<html lang="en">
+@include('layouts.navbar')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
-</head>
-
-<body>
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('{{ asset('/sb') }}/images/bg_3.jpg');"
+    data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                                class="ion-ios-arrow-forward"></i></a></span> <span>Cars <i
+                            class="ion-ios-arrow-forward"></i></span></p>
+                <h1 class="mb-3 bread">Edit Car Data</h1>
+            </div>
+        </div>
+    </div>
+</section>
 
     <div class="container py-5">
         <div class="main-panel">
@@ -47,7 +49,6 @@
                 </div>
             </div>
         </div>
+        </div>
 
-</body>
-
-</html>
+        @include('layouts.footer')

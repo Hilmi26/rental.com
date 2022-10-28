@@ -82,6 +82,8 @@ Route::delete('/mobil/{id}', [MobilController::class, 'destroy']); //mengarah ke
 Route::resource('mobil', MobilController::class); //update detail mobil
 Route::put('/page/mobil/mobil/{id}', [MobilController::class, 'updateImage']);
 
+Route::get('/page/mobil/detail_mobil/{id}', [MobilController::class, 'detailMobil']);
+
 Route::get('/download', [MobilController::class, 'export']);
 
 

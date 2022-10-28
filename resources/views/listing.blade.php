@@ -25,7 +25,7 @@
 
   <body>
 
-    
+
     <div class="site-wrap" id="home-section">
 
       <div class="site-mobile-menu site-navbar-target">
@@ -51,30 +51,30 @@
             </div>
 
             <div class="col-9  text-right">
-              
+
               <span class="d-inline-block d-lg-none"><a href="#" class=" site-menu-toggle js-menu-toggle py-5 "><span class="icon-menu h3 text-black"></span></a></span>
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li><a href="index" class="nav-link">Home</a></li>
-                  <li><a href="listing" class="nav-link">Listing</a></li>
-                  <li><a href="testimonials" class="nav-link">Testimonials</a></li>
-                  <li><a href="blog" class="nav-link">Blog</a></li>
-                  <li class="active"><a href="about" class="nav-link">About</a></li>
-                  <li><a href="contact" class="nav-link">Contact</a></li>
+                  <li><a href="/index" class="nav-link">Home</a></li>
+                  <li><a href="/listing" class="nav-link">Listing</a></li>
+                  <li><a href="/testimonials" class="nav-link">Testimonials</a></li>
+                  <li><a href="/blog" class="nav-link">Blog</a></li>
+                  <li class="/active"><a href="about" class="nav-link">About</a></li>
+                  <li><a href="/contact" class="nav-link">Contact</a></li>
                 </ul>
               </nav>
             </div>
 
-            
+
           </div>
         </div>
 
       </header>
 
-      
+
       <div class="hero inner-page" style="background-image: url('sb/images/hero_1_a.jpg');">
-        
+
         <div class="container">
           <div class="row align-items-end ">
             <div class="col-lg-5">
@@ -88,21 +88,21 @@
           </div>
         </div>
       </div>
-  
 
 
 
-      
+
+
 
     <div class="site-section bg-light">
       <div class="container">
         <div class="row">
           <div class="col-lg-7">
             <h2 class="section-heading"><strong>Car Listings</strong></h2>
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>    
+            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
         </div>
-        
+
 
         <div class="row">
           <div class="col-md-6 col-lg-4 mb-4">
@@ -172,7 +172,7 @@
 
             </div>
           </div>
-          
+
 
           <div class="col-md-6 col-lg-4 mb-4">
 
@@ -275,7 +275,7 @@
 
             </div>
           </div>
-          
+
 
           <div class="col-md-6 col-lg-4 mb-4">
 
@@ -326,14 +326,14 @@
       </div>
     </div>
 
-    
+
 
     <div class="site-section">
       <div class="container">
         <div class="row">
           <div class="col-lg-7">
             <h2 class="section-heading"><strong>Testimonials</strong></h2>
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>    
+            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
         </div>
         <div class="row">
@@ -397,7 +397,7 @@
       </div>
     </div>
 
-      
+
       <footer class="site-footer">
         <div class="container">
           <div class="row">

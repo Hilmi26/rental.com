@@ -4,12 +4,12 @@
     <title>Carbook - Free Bootstrap 4 Template by Colorlib</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset ('sb/css/open-iconic-bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset ('sb/css/animate.css')}}">
-    
+
     <link rel="stylesheet" href="{{ asset('/sb')}}/css/owl.carousel.min.css">
     <link rel="stylesheet" href="{{ asset('/sb')}}/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="{{ asset('/sb')}}/css/magnific-popup.css">
@@ -21,16 +21,19 @@
     <link rel="stylesheet" href="{{ asset('/sb')}}/css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="{{ asset('/sb')}}/css/jquery.timepicker.css">
 
-    
+
     <link rel="stylesheet" href="{{ asset('/sb')}}/css/flaticon.css">
     <link rel="stylesheet" href="{{ asset('/sb')}}/css/icomoon.css">
     <link rel="stylesheet" href="{{ asset('/sb')}}/css/style.css">
 
     {{-- tabel --}}
     <link href="{{ asset ('sb/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/f8eb9c4688.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    
+
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
 	      <a class="navbar-brand" href="index.html">Car<span>Book</span></a>
@@ -54,7 +57,7 @@
 
 {{-- <nav class="navbar navbar-expand-lg bg-light">
     <div class="container">
-        
+
         <div class="col-3">
             <div class="site-logo">
                 <a href="index.html"><strong>CarRental</strong></a>
@@ -116,7 +119,7 @@
                     </li>
                     @endguest
             </ul>
-       
+
         </div>
     </div>
 </nav>--}}

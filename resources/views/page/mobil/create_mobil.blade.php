@@ -1,16 +1,21 @@
 {{-- Hilmi --}}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+@include('layouts.navbar')
 
-</head>
-<body>
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('{{ asset('/sb') }}/images/bg_3.jpg');"
+    data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                                class="ion-ios-arrow-forward"></i></a></span> <span>Cars <i
+                            class="ion-ios-arrow-forward"></i></span></p>
+                <h1 class="mb-3 bread">Add Car Data</h1>
+            </div>
+        </div>
+    </div>
+</section>
 
     <div class="container py-5">
         <div class="main-panel">
@@ -20,7 +25,7 @@
                     <div class="col-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Tambah Data Mobil</h4>
+                                <h4 class="card-title mb-3">Tambah Data Mobil</h4>
 
                                 <form class="forms-sample" action="/mobil" method="post" enctype="multipart/form-data">
                                     @csrf
@@ -31,16 +36,9 @@
                                             placeholder="Masukkan Rental" value="1" required>
                                     </div>
                                     <div class="form-group">
-                                            <label for="foto_mobil">Image</label>
-                                            <input class="form-control" type="file" name="foto_mobil" required>
+                                        <label for="foto_mobil">Image</label>
+                                        <input class="form-control" type="file" name="foto_mobil" required>
                                     </div>
-                                    {{-- <div class="form-group">
-                                        <label>Image</label>
-                                        <input type="text"
-                                            class="form-control @error('foto_mobil') is-invalid @enderror"
-                                            name="foto_mobil" placeholder="Masukkan Gambar Mobil"
-                                            value="{{ old('foto_mobil') }}">
-                                    </div> --}}
                                     <div class="form-group">
                                         <label>Merek</label>
                                         <input type="text"
@@ -105,8 +103,7 @@
                                             name="status_unit" required>
                                             <option>Pilih Status Unit</option>
                                             <option value="Ready">Ready</option>
-                                            <option value="Dalam Peminjaman">Dalam Peminjaman</option>
-                                            <option value="Dalam Perbaikan">Dalam Perbaikan</option>
+                                            <option value="Unavailable">Unavailable</option>
                                         </select>
                                     </div>
 
@@ -135,6 +132,6 @@
                 </div>
             </div>
     </div>
+</div>
+    @include('layouts.footer')
 
-</body>
-</html>
