@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\detailRentalController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DetailUserController;
@@ -39,10 +40,6 @@ Route::get('blog', function () {
 
 Route::get('car', function () {
     return view('car');
-});
-
-Route::get('contact', function () {
-    return view('contact');
 });
 
 Route::get('listing', function () {
@@ -91,3 +88,5 @@ Route::resource('rental', rentalController::class);
 Route::resource('detail_rental', detailRentalController::class);
 Route::get('deleterental/{id}', [rentalController::class, 'destroy'])->name('deleterental');
 Route::get('deletedetail/{id}', [detailRentalController::class, 'destroy'])->name('deletedetail');
+
+Route::resource('contact', ContactController::class);

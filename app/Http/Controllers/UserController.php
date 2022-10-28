@@ -16,6 +16,7 @@ class UserController extends Controller
     public function index()
     {
         $data = User::all();
+        
     
         return view ('/page/user/tabeluser', compact ('data'));
     }
@@ -100,8 +101,8 @@ class UserController extends Controller
             'nama_user' => 'required|string',
             'username' => 'required|string',
             'email' => 'required|string',
-            'password' => 'required|string',
-            'password_confir' => 'required|same:password',
+            // 'password' => 'required|string',
+            // 'password_confir' => 'required|same:password',
      
         ]);
 
@@ -109,7 +110,7 @@ class UserController extends Controller
             'nama_user' => $request -> nama_user,
             'username' => $request -> username,
             'email' => $request -> email,
-            'password' => Hash::make($request['password']),
+            // 'password' => Hash::make($request['password']),
         ]);
         return redirect('page/user') ->with ('success', 'Data Berhasil Dirubah');
     }

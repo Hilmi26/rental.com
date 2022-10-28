@@ -33,14 +33,14 @@
                                 <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$data->email}}">
                             </div >
                             
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label >Password</label>
                                 <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="masukkan password" value="">
                             </div>
                             <div class="form-group">
                                 <label>Password Confirmation</label>
                                 <input type="password" class="form-control @error('password_confir') is-invalid @enderror" name="password_confir" placeholder="masukkan password" value="">
-                            </div>
+                            </div> --}}
                             <div class="d-flex justify-content-between">
                                 <button type="submit" class="btn btn-primary btn-sm mt-3">Submit</button>
                                 <a href="/page/user" class="btn btn-primary btn-sm mt-3">kembali</a>
