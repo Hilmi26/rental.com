@@ -3,18 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the users
      *
-     * @return \Illuminate\Http\Response
+     * @param  \App\Models\User  $model
+     * @return \Illuminate\View\View
      */
-    public function index()
+    public function index(User $model)
     {
+<<<<<<< HEAD
         $data = User::all();
         
     
@@ -128,5 +130,8 @@ class UserController extends Controller
         $data->delete();
     
         return redirect('page/user') ->with ('success', 'Data Berhasil Dihapus');
+=======
+        return view('users.index', ['users' => $model->paginate(15)]);
+>>>>>>> 78621233d5b2be60a01ad50aeb64c483ab3b327a
     }
 }
