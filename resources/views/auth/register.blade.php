@@ -63,17 +63,31 @@
             <div class="card-body ">
               <form method="POST" action="{{ route('register') }}">
                 @csrf
-                <!--Begin input name -->
-                <div class="input-group {{ $errors->has('name') ? ' has-danger' : '' }}">
+                <!--Begin input nama_user -->
+                <div class="input-group {{ $errors->has('nama_user') ? ' has-danger' : '' }}">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
                       <i class="now-ui-icons users_circle-08"></i>
                     </div>
                   </div>
-                  <input class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" type="text" name="name" value="{{ old('name') }}" required autofocus>
-                  @if ($errors->has('name'))
+                  <input class="form-control {{ $errors->has('nama_user') ? ' is-invalid' : '' }}" placeholder="{{ __('Nama Lengkap') }}" type="text" name="nama_user" value="{{ old('nama_user') }}" required autofocus>
+                  @if ($errors->has('nama_user'))
                     <span class="invalid-feedback" style="display: block;" role="alert">
-                      <strong>{{ $errors->first('name') }}</strong>
+                      <strong>{{ $errors->first('nama_user') }}</strong>
+                    </span>
+                  @endif
+                </div>
+                <!--Begin input username -->
+                <div class="input-group {{ $errors->has('username') ? ' has-danger' : '' }}">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="now-ui-icons users_circle-08"></i>
+                    </div>
+                  </div>
+                  <input class="form-control {{ $errors->has('username') ? ' is-invalid' : '' }}" placeholder="{{ __('Nama Lengkap') }}" type="text" name="username" value="{{ old('username') }}" required autofocus>
+                  @if ($errors->has('username'))
+                    <span class="invalid-feedback" style="display: block;" role="alert">
+                      <strong>{{ $errors->first('username') }}</strong>
                     </span>
                   @endif
                 </div>
@@ -114,7 +128,7 @@
                       <i class="now-ui-icons objects_key-25"></i></i>
                     </div>
                   </div>
-                  <input class="form-control" placeholder="{{ __('Confirm Password') }}" type="password" name="password_confirmation" required>
+                  <input class="form-control" placeholder="{{ __('Confirm Password') }}" type="password" name="password_confir" required>
                 </div>
                 <div class="form-check text-left">
                   <label class="form-check-label">
