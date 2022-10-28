@@ -20,10 +20,15 @@
 <section class="ftco-section bg-light">
     <div class="container">
         <div class="row">
-            
+
             @foreach ($mobil as $item)
                 <div class="col-md-4">
                     <div class="car-wrap rounded ftco-animate">
+
+                        {{-- <a href="/page/mobil/edit_image/{{ $item->id }}" type="button" class="edit-list" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit Image">
+
+                            <i class="fa-solid fa-square-pen"></i>
+                        </a> --}}
 
                         <div class="dropdown">
                             <i class="fa-solid fa-ellipsis edit-list " id="dropdownMenuButton" data-toggle="dropdown"

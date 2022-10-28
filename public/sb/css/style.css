@@ -14378,7 +14378,7 @@ textarea.form-control {
     }
 }
 
-@keyframes loader-dash {
+/* @keyframes loader-dash {
 
 
   0% {
@@ -14389,7 +14389,7 @@ textarea.form-control {
     stroke-dashoffset: -35px; }
   100% {
     stroke-dasharray: 89, 200;
-    stroke-dashoffset: -136px; } }
+    stroke-dashoffset: -136px; } } */
 
 
     .word-waves a {
