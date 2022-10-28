@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -45,9 +46,7 @@ class UserController extends Controller
             'password' => 'required|string',
             'password_confir' => 'required|same:password',
      
-        ]);
-
-    
+        ]);    
         User :: create (
             [
                 'nama_user' => $request -> nama_user,
@@ -56,7 +55,6 @@ class UserController extends Controller
                 'password' => $request -> password,
                     
             ]
-
         ) ;
 
         return redirect('page/user')->with('success', 'Data berhasil ditambahkan');
@@ -103,10 +101,16 @@ class UserController extends Controller
             'username' => 'required|string',
             'email' => 'required|string',
             'password' => 'required|string',
+            'password_confir' => 'required|same:password',
      
         ]);
 
-        $data ->update($validator);
+        $data ->update([
+            'nama_user' => $request -> nama_user,
+            'username' => $request -> username,
+            'email' => $request -> email,
+            'password' => Hash::make($request['password']),
+        ]);
         return redirect('page/user') ->with ('success', 'Data Berhasil Dirubah');
     }
 
