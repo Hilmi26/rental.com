@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ asset('/sb')}}/css/flaticon.css">
     <link rel="stylesheet" href="{{ asset('/sb')}}/css/icomoon.css">
     <link rel="stylesheet" href="{{ asset('/sb')}}/css/style.css">
+    
 
     {{-- tabel --}}
     <link href="{{ asset ('sb/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
