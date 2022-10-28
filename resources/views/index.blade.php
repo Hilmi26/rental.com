@@ -347,7 +347,7 @@
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="blog-single.html" class="block-20" style="background-image: url{{ asset('/sb')}}/('images/image_2.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('/sb')}}/images/image_2.jpg');">
               </a>
               <div class="text pt-4">
               	<div class="meta mb-3">

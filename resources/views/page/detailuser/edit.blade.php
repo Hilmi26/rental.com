@@ -37,7 +37,7 @@
                             <div class="form-group">
                                 
                                 <label >Nama</label>
-                                <input type="hidden" class="form-control @error('user_id') is-invalid @enderror" name="user_id"  value="{{$data->id}}">
+                                <input type="text" class="form-control @error('user_id') is-invalid @enderror" name="user_id"  value="{{$data->id}}">
 
                                 <input type="text" class="form-control @error('user_id') is-invalid @enderror" name="username"  value="{{$data->user->username}}">
                             </div>
