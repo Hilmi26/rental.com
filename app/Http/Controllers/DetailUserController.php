@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 
 class DetailUserController extends Controller
 {
@@ -154,8 +155,8 @@ class DetailUserController extends Controller
                 'ktp' => $file]);
             }
 
-            if ($request ->file('wajah_ktp') != null){
-                $file2 = $request->file('wajah_ktp')->store('selfi');
+            if ($request ->file('selfi') != null){
+                $file2 = $request->file('selfi')->store('selfi');
          
             $data ->update([
                 
@@ -164,8 +165,8 @@ class DetailUserController extends Controller
             ]); 
             }
 
-            if ($request ->file('foto_profil') != null){
-                $file3 = $request->file('foto_profil')->store('profil');
+            if ($request ->file('profil') != null){
+                $file3 = $request->file('profil')->store('profil');
     
             $data ->update([
                 
@@ -182,8 +183,8 @@ class DetailUserController extends Controller
                 // 'provinsi' => $data -> provinsi,
                 // 'kode_pos' => $data -> kode_pos,
                 'ktp' =>$data->ktp, 
-                'wajah_ktp' =>$data->wajah_ktp,
-                'foto_profil' =>$data->foto_profil,
+                'selfi' =>$data->wajah_ktp,
+                'profil' =>$data->foto_profil,
 
             ]);
 
@@ -203,6 +204,28 @@ class DetailUserController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        // dd($id);
+        $data = detail_user::findorFail($id);
+        $data2 = User :: find ($id) ;
+
+        // Storage::delete('ktp/'. $data->ktp);
+        // Storage::delete('selvi/'. $data->wajah_ktp);
+        // Storage::delete('profil/'. $data->foto_profil);
+        $data2->delete();
+        $data->delete();
+        Storage::delete([$data->ktp,$data->wajah_ktp,$data->foto_profil]);
+
+
+        return redirect('/index')->with('success', 'Data berhasil Dihapus');
     }
+
+    public function wilayah ()
+    {
+
+        $data = Http::get('https://www.emsifa.com/api-wilayah-indonesia/api/provinces.json');
+        return $data->json();
+    //     dd('haaiii');
+    }
+
 }

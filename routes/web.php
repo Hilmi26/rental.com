@@ -87,15 +87,17 @@ Route::get('/page/mobil/detail_mobil/{id}', [MobilController::class, 'detailMobi
 
 Route::get('/download', [MobilController::class, 'export']);
 
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route:: get ('/page/user', [UserController::class, 'index']) ;
-// Route::get('/page/user', [UserController::class,'index']);
 Route::resource('page/user', UserController::class);
 Route::get('deleteuser/{id}', [UserController::class, 'destroy'])->name('deleteuser');
 
 Route::resource('page/detailuser', DetailUserController::class);
+Route::get('deletdetailuser/{id}', [DetailUserController::class, 'destroy'])->name('deletdetailuser');
+Route:: get('wilayah', [DetailUserController:: class, 'wilayah']);
+// Route::get('ajax', function(){
+//     return view('page/detailuser.ajax');
+// });
 
 Route::resource('rental', rentalController::class);
 Route::resource('detail_rental', detailRentalController::class);
@@ -113,3 +115,4 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 	Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
 });
+

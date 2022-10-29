@@ -18,12 +18,10 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     public const HOME = '/home';
-    // HEAD
     public const DETAILUSER = '/page/detailuser/create';
-    // public const INDEX = '/index';
-
+    public const MOBIL = '/mobil';
     public const LOGIN = '/login';
-    // public const DETAILUSER = '/page/detailuser/create';
+  
 
 
     /**

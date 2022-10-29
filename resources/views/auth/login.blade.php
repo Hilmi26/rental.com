@@ -30,18 +30,15 @@
                 @csrf
             <div class="card card-login card-plain">
                 <div class="card-header ">
-                <div class="logo-container">
-                    <img src="{{ asset('assets/img/now-logo.png') }}" alt="">
                 </div>
-                </div>
-                <div class="card-body ">
+                <div class="card-body">
                 <div class="input-group no-border form-control-lg {{ $errors->has('email') ? ' has-danger' : '' }}">
                     <span class="input-group-prepend">
                     <div class="input-group-text">
                         <i class="now-ui-icons users_circle-08"></i>
                     </div>
                     </span>
-                    <input class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" type="email" name="email" value="{{ old('email', 'admin@nowui.com') }}" required autofocus>
+                    <input class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }} text-warning" placeholder="{{ __('Email') }}" type="email" name="email" value="{{ old('email', 'admin@nowui.com') }}" required autofocus>
                 </div>
                 @if ($errors->has('email'))
                     <span class="invalid-feedback" style="display: block;" role="alert">
