@@ -93,6 +93,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route:: get ('/page/user', [UserController::class, 'index']) ;
 // Route::get('/page/user', [UserController::class,'index']);
 Route::resource('page/user', UserController::class);
+Route::resource('usermanagemen', UserController::class);
 Route::get('deleteuser/{id}', [UserController::class, 'destroy'])->name('deleteuser');
 
 Route::resource('page/detailuser', DetailUserController::class);

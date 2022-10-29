@@ -1,5 +1,5 @@
 {{-- Hilmi --}}
-@include('layouts.navbar')
+@include('layouts.navbar.navbar')
 
 <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('{{ asset('/sb') }}/images/bg_3.jpg');"
     data-stellar-background-ratio="0.5">
@@ -51,4 +51,4 @@
         </div>
         </div>
 
-        @include('layouts.footer')
+        @include('layouts.footer.footer')

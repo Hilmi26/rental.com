@@ -1,4 +1,4 @@
-@include('layouts.navbar')
+@include('layouts.navbar.navbar')
 <!-- END nav -->
 
 <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('{{ asset('/sb') }}/images/bg_3.jpg');"
@@ -388,4 +388,4 @@
     </div>
 </section>
 
-@include('layouts.footer')
+@include('layouts.footer.footer')
