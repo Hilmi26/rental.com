@@ -46,7 +46,7 @@
                     <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="/pricing" class="nav-link">Pricing</a></li>
                     <li class="nav-item"><a href="/car" class="nav-link">Cars</a></li>
-                    <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+                    {{-- <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li> --}}
                     @guest
                     @if (Route::has('login'))
                     <li class="nav-item">
@@ -65,8 +65,8 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __("My profile") }}</a>
-                            <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __("Edit profile") }}</a>
+                            <a class="dropdown-item" href="/contact">{{ __("My profile") }}</a>
+                            <a class="dropdown-item" href="/contact">{{ __("Edit profile") }}</a>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
