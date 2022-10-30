@@ -49,7 +49,7 @@
                                         <i class="now-ui-icons users_circle-08"></i>
                                     </div>
                                 </div>
-                                <input class="form-control {{ $errors->has('username') ? ' is-invalid' : '' }}" placeholder="{{ __('Nama Lengkap') }}" type="text" name="username" value="{{ old('username') }}" required autofocus>
+                                <input class="form-control {{ $errors->has('username') ? ' is-invalid' : '' }}" placeholder="{{ __('username') }}" type="text" name="username" value="{{ old('username') }}" required autofocus>
                                 @if ($errors->has('username'))
                                 <span class="invalid-feedback" style="display: block;" role="alert">
                                     <strong>{{ $errors->first('username') }}</strong>

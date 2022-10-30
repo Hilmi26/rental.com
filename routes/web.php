@@ -11,6 +11,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MobilController;
 use App\Http\Controllers\Excel;
 use App\Http\Controllers\rentalController;
+use Illuminate\Routing\Controllers\Middleware;
+use Illuminate\Routing\RouteGroup;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,6 +74,24 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 // });
 
 
+
+// // admin
+// Route::middleware(['auth', 'admin'])->group(function () {
+//     Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
+//     Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
+//     Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
+//     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
+//     Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
+//     Route::resource('page/user', UserController::class);
+//     Route::resource('usermanagemen', UserController::class);
+//     Route::resource('page/detailuser', DetailUserController::class);
+//     Route::get('deleteuser/{id}', [UserController::class, 'destroy'])->name('deleteuser');
+//     Route::resource('rental', rentalController::class);
+//     Route::resource('detail_rental', detailRentalController::class);
+//     Route::get('deleterental/{id}', [rentalController::class, 'destroy'])->name('deleterental');
+//     Route::get('deletedetail/{id}', [detailRentalController::class, 'destroy'])->name('deletedetail');
+// });
+
 //Hilmi
 //CRUD Mobil
 Route::get('/mobil', [MobilController::class, 'index']);
@@ -82,35 +102,41 @@ Route::get('/page/mobil/edit_image/{id}', [MobilController::class, 'editImage'])
 Route::delete('/mobil/{id}', [MobilController::class, 'destroy']); //mengarah ke function destroy di MobilController
 Route::resource('mobil', MobilController::class); //update detail mobil
 Route::put('/page/mobil/mobil/{id}', [MobilController::class, 'updateImage']);
-
 Route::get('/page/mobil/detail_mobil/{id}', [MobilController::class, 'detailMobil']);
-
 Route::get('/download', [MobilController::class, 'export']);
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-// Route:: get ('/page/user', [UserController::class, 'index']) ;
-// Route::get('/page/user', [UserController::class,'index']);
-Route::resource('page/user', UserController::class);
-Route::resource('usermanagemen', UserController::class);
-Route::get('deleteuser/{id}', [UserController::class, 'destroy'])->name('deleteuser');
-
-Route::resource('page/detailuser', DetailUserController::class);
-
-Route::resource('rental', rentalController::class);
-Route::resource('detail_rental', detailRentalController::class);
-Route::get('deleterental/{id}', [rentalController::class, 'destroy'])->name('deleterental');
-Route::get('deletedetail/{id}', [detailRentalController::class, 'destroy'])->name('deletedetail');
-
-Route::resource('contact', ContactController::class);Auth::routes();
-
-Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
-
-Route::group(['middleware' => 'auth'], function () {
-	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
-	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
-	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
-	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
-	Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
+// admin
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('page/user', UserController::class);
+    Route::resource('usermanagemen', UserController::class);
+    Route::resource('page/detailuser', DetailUserController::class);
+    Route::get('deleteuser/{id}', [UserController::class, 'destroy'])->name('deleteuser');
 });
+
+// userr
+Route::middleware(['auth', 'user'])->group(function () {
+    Route::resource('page/user', UserController::class);
+    Route::resource('usermanagemen', UserController::class);
+    Route::resource('page/detailuser', DetailUserController::class);
+    Route::get('deleteuser/{id}', [UserController::class, 'destroy'])->name('deleteuser');
+});
+
+
+// rental
+Route::middleware(['auth', 'rental'])->group(function () {
+    Route::view('page.rental.tabelRental', 'rental.index');
+    Route::resource('rental', rentalController::class);
+    Route::resource('detail_rental', detailRentalController::class);
+    Route::get('deleterental/{id}', [rentalController::class, 'destroy'])->name('deleterental');
+    Route::get('deletedetail/{id}', [detailRentalController::class, 'destroy'])->name('deletedetail');
+});
+
+Route::resource('contact', ContactController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
