@@ -49,7 +49,7 @@
                       <i class="now-ui-icons users_circle-08"></i>
                     </div>
                   </div>
-                  <input class="form-control {{ $errors->has('username') ? ' is-invalid' : '' }}" placeholder="{{ __('Masukkan User Name') }}" type="text" name="username" value="{{ old('username') }}" required autofocus>
+                  <input class="form-control {{ $errors->has('username') ? ' is-invalid' : '' }}" placeholder="{{ __('Masukkan Username') }}" type="text" name="username" value="{{ old('username') }}" required autofocus>
                   @if ($errors->has('username'))
                     <span class="invalid-feedback" style="display: block;" role="alert">
                       <strong>{{ $errors->first('username') }}</strong>
@@ -95,16 +95,8 @@
                   </div>
                   <input class="form-control" placeholder="{{ __('Confirm Password') }}" type="password" name="password_confir" required>
                 </div>
-                <div class="form-check text-left">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox">
-                    <span class="form-check-sign"></span>
-                    {{ __('I agree to the') }}
-                    <a href="#something">{{ __('terms and conditions') }}</a>.
-                  </label>
-                </div>
                 <div class="card-footer ">
-                  <button type="submit" class="btn btn-warning btn-round btn-sm">{{__('Get Started')}}</button>
+                  <button type="submit" class="btn btn-warning btn-round btn-sm">{{__('Register Now')}}</button>
                 </div>
               </form>
             </div>
