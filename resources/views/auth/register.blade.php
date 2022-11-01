@@ -9,7 +9,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 mx-auto">
-          <div class="card card-signup text-center bg-dark text-warning">
+          <div class="card card-signup text-center text-warning">
             <div class="card-header ">
               <h4 class="card-title">{{ __('Register') }}</h4>
               <div class="social">
