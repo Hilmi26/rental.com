@@ -17,9 +17,10 @@ class rental
      */
     public function handle(Request $request, Closure $next)
     {
-        if  (Auth::user()->role != 'rental'){
+        if  (Auth::user()->role == 'rental'|| Auth::user()->role == 'admin'){
+            return $next($request);
+        }else {
             return redirect('login');
         }
-        return $next($request);
     }
 }

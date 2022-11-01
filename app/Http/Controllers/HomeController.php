@@ -31,13 +31,13 @@ class HomeController extends Controller
     {
         // $data = mobil::all();
         // $data = detail_user::all();
-        $data = rental::all();
+        $data = detail_rental::all();
         if (Auth::user()->role == 'admin') {
-            return view('contact');
+            return redirect('contact');
         }elseif (Auth::user()->role =='rental'){
-            return view('page.rental.tabelRental',compact('data'));
+            return redirect('detail_rental');
         }else {
-            return view('home');
+            return redirect('/page/detailuser');
         }
     }
 }

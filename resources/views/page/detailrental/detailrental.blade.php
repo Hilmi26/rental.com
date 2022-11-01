@@ -30,7 +30,7 @@
                 <th scope="row">{{$loop->iteration}}</th>
 
                 <td>{{$item->id}}</td>
-                <td>{{$item->rental->nama_rental}}</td>
+                <td>{{$item->rental_id}}</td>
                 <td>{{$item->telp_rental}}</td>
                 <td>{{$item->alamat}}</td>
                 <td>{{$item->kota}}</td>
