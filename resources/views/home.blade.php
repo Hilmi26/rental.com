@@ -2,7 +2,7 @@
     'namePage' => 'Dashboard',
     'class' => 'login-page sidebar-mini ',
     'activePage' => 'home',
-    'backgroundImage' => asset('now') . "/img/bg14.jpg",
+    'backgroundImage' => asset('now') . "/images/bg14.jpg",
 ])
 
 @section('content')
@@ -276,7 +276,7 @@
 @push('js')
   <script>
     $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
+      // Javascript method's body can be found in sb/js/demos.js
       demo.initDashboardPageCharts();
 
     });
