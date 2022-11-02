@@ -49,8 +49,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Provinsi</label>
-                                        {{-- <input type="text" class="form-control @error('provinsi') is-invalid @enderror" name="provinsi" placeholder="Masukkan Provinsi" value="{{ old('provinsi')}}"> --}}
-                                        <select class="form-control @error('provinsi') is-invalid @enderror" name="provinsi" id="provinsi" onchange="daerah(value)" value="{{ old('provinsi')}}"></select>
+
+                                        <input type="hidden" class="form-control @error('provinsi') is-invalid @enderror" name="provinsi" placeholder="Masukkan Provinsi" value="{{ old('provinsi')}}" id="provinsi2">
+
+                                        <select class="form-control @error('provinsi') is-invalid @enderror" id="provinsi" onchange="daerah(value)" ></select>
                                     </div>
                                     <div class="form-group">
                                         <label >Kota/Kabupaten</label>

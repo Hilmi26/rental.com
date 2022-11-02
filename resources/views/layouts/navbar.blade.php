@@ -30,7 +30,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-dark" id="ftco-navbar">
         <div class="container">
             <div class="word-waves">
                 <a class="navbar-brand" href="/index">"Car Rental"</a>

@@ -21,10 +21,16 @@ function daerah(id){
         $('#kota').children().remove()
         response.map((value)=>{
             $('#kota').append($('<option>', {
-                value : value.id,
+                value : value.name,
                 text : value.name,
             }));
        })
     }
    });
+
+    
+    let prov = $('#provinsi option:selected').text()
+    console.log (prov);
+
+    $('#provinsi2').val(prov)
 }
