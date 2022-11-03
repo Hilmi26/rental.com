@@ -87,6 +87,9 @@
                                         <a class="dropdown-item" href="{{ url('deletdetaileuser/' . Auth::user()->id) }}">
                                             Hapus akun
                                         </a>
+                                        {{-- <a href="{{ url ('deletdetailuser/'.$item->id)}}" class="btn btn-danger btn-sm mb-3">
+                                            Hapus
+                                          </a> --}}
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">

@@ -26,8 +26,8 @@
     <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-md-10">
-                <div class="card">
-                    <div class="card-header">{{ __('Edit') }}</div>
+                <div class="card bg-dark text-warning">
+                    <div class="card-header">{{ __('Edit Data') }}</div>
                     <div class="card-body">
                         <form action = "{{ url ('page/detailuser/'.$data->id)}}" method = "POST" enctype="multipart/form-data">
                         @csrf
@@ -36,29 +36,34 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label >Nama</label>
-                                        <input type="hidden" class="form-control @error('user_id') is-invalid @enderror" name="user_id"  value="{{$data->id}}">
+                                        <input type="hidden" class="form-control @error('user_id') is-invalid @enderror " name="user_id"  value="{{$data->id}}">
 
                                         <input type="text" class="form-control @error('user_id') is-invalid @enderror" name="username"  value="{{$data->user->username}}">
                                     </div>
-
+                                    
                                     <div class="form-group">
                                         <label >No HP</label>
                                         <input type="text" class="form-control @error('telp_user') is-invalid @enderror" name="telp_user"  value="{{$data->telp_user}}">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Provinsi</label>
+                                        <input type="hidden" class="form-control @error('provinsi') is-invalid @enderror" name="provinsi" value="{{$data->provinsi}}" id="provinsi2">
+                                        <select class="form-control @error('provinsi') is-invalid @enderror" id="provinsi" onchange="daerah(value)" >
+                                            <option>{{$data->provinsi}}</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label >Kota</label>
+                                        <select class="form-control @error('provinsi') is-invalid @enderror" name="kota" id="kota" onchange="daerah(value)">
+                                            <option>{{$data->kota}}</option>
+                                        </select>
                                     </div>
 
                                     <div class="form-group">
                                         <label >Alamat</label>
                                         <input type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat"  value="{{$data->alamat}}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label >Kota</label>
-                                        <input type="text" class="form-control @error('kota') is-invalid @enderror" name="kota" value="{{$data->kota}}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Provinsi</label>
-                                        <input type="text" class="form-control @error('provinsi') is-invalid @enderror" name="provinsi" value="{{$data->provinsi}}">
                                     </div>
 
                                     <div class="form-group mb-2">
