@@ -130,15 +130,12 @@ Route::delete('/mobil/{id}', [MobilController::class, 'destroy']); //mengarah ke
 Route::resource('mobil', MobilController::class); //update detail mobil
 Route::put('/page/mobil/mobil/{id}', [MobilController::class, 'updateImage']);
 Route::get('/page/mobil/detail_mobil/{id}', [MobilController::class, 'detailMobil']);
-<<<<<<< HEAD
-=======
 
 //transaksi
 Route::get('/page/transaksi/transaksi/{id}', [TransaksiController::class, 'index']);
 Route::post('/transaksi', [TransaksiController::class, 'store']);
 
 
->>>>>>> 627362a3bdae5b00d7bc978b2fb0549cd7c691d2
 Route::get('/download', [MobilController::class, 'export']);
 
 // });
@@ -190,42 +187,6 @@ Route::middleware(['auth', 'rental'])->group(function () {
 
 
 
-<<<<<<< HEAD
-// admin
-Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
-    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::resource('page/user', UserController::class);
-    Route::resource('usermanagemen', UserController::class);
-    Route::resource('page/detailuser', DetailUserController::class);
-    Route::get('deleteuser/{id}', [UserController::class, 'destroy'])->name('deleteuser');
-});
-
-// userr
-Route::middleware(['auth', 'user'])->group(function () {
-    Route::resource('page/user', UserController::class);
-    Route::resource('usermanagemen', UserController::class);
-    Route::resource('page/detailuser', DetailUserController::class);
-    Route::get('deleteuser/{id}', [UserController::class, 'destroy'])->name('deleteuser');
-});
-
-
-// rental
-Route::middleware(['auth', 'rental'])->group(function () {
-    Route::view('page.rental.tabelRental', 'rental.index');
-    Route::resource('rental', rentalController::class);
-    Route::resource('detail_rental', detailRentalController::class);
-    Route::get('deleterental/{id}', [rentalController::class, 'destroy'])->name('deleterental');
-    Route::get('deletedetail/{id}', [detailRentalController::class, 'destroy'])->name('deletedetail');
-});
-
-Route::resource('contact', ContactController::class);
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
-=======
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     // rentalldetail
@@ -292,4 +253,3 @@ Route::group(['middleware' => 'auth'], function () {
     // Route::get('/page/mobil/detail_mobil/{id}', [MobilController::class, 'detailMobil']);
     // Route::get('/download', [MobilController::class, 'export']);
     //
->>>>>>> 627362a3bdae5b00d7bc978b2fb0549cd7c691d2
