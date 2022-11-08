@@ -1,16 +1,19 @@
 <?php
 
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\detailRentalController;
+use App\Http\Controllers\Excel;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\DetailUserController;
-use App\Http\Controllers\UserController;
-use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\MobilController;
-use App\Http\Controllers\Excel;
 use App\Http\Controllers\rentalController;
+
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\TransaksiController;
+use Illuminate\Routing\Route as RoutingRoute;
+use App\Http\Controllers\DetailUserController;
+use App\Http\Controllers\detailRentalController;
+
 use App\Models\detail_rental;
 use App\Models\detail_user;
 
@@ -28,6 +31,43 @@ use App\Models\detail_user;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('index', function () {
+    return view('index');
+});
+
+Route::get('about', function () {
+    return view('about');
+});
+
+Route::get('blog', function () {
+    return view('blog');
+});
+
+Route::get('car', function () {
+    return view('car');
+});
+
+Route::get('listing', function () {
+    return view('listing');
+});
+
+Route::get('main', function () {
+    return view('main');
+});
+
+Route::get('pricing', function () {
+    return view('pricing');
+});
+
+Route::get('services', function () {
+    return view('services');
+});
+
+// Route::get('contact', function () {
+//     return view('contact');
+// });
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
@@ -48,11 +88,30 @@ Route::view('contact', 'contact');
 
 
 // admin
-// Route::middleware(['auth', 'admin'])->group(function () {  
+// Route::middleware(['auth', 'admin'])->group(function () {
 // });
 
 // rental
 // Route::middleware(['auth', 'rental'])->group(function () {
+
+//Hilmi
+//CRUD Mobil
+Route::get('/mobil', [MobilController::class, 'index']);
+Route::get('/create_mobil', [MobilController::class, 'create']);
+Route::post('/mobil', [MobilController::class, 'store']);
+Route::get('/page/mobil/edit_mobil/{id}', [MobilController::class, 'edit']);
+Route::get('/page/mobil/edit_image/{id}', [MobilController::class, 'editImage']);
+Route::delete('/mobil/{id}', [MobilController::class, 'destroy']); //mengarah ke function destroy di MobilController
+Route::resource('mobil', MobilController::class); //update detail mobil
+Route::put('/page/mobil/mobil/{id}', [MobilController::class, 'updateImage']);
+Route::get('/page/mobil/detail_mobil/{id}', [MobilController::class, 'detailMobil']);
+
+//transaksi
+Route::get('/page/transaksi/transaksi/{id}', [TransaksiController::class, 'index']);
+Route::post('/transaksi', [TransaksiController::class, 'store']);
+
+
+Route::get('/download', [MobilController::class, 'export']);
 
 // });
 
@@ -89,6 +148,12 @@ Route::middleware(['auth', 'rental'])->group(function () {
     Route::resource('detail_rental', detailRentalController::class);
     Route::get('deletedetail/{id}', [detailRentalController::class, 'destroy'])->name('deletedetail');
 
+
+
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
     // rentalldetail
     $data = detail_rental::all();
     Route::view('detailrental', 'page.detailrental.detailrental', compact('data'));
@@ -115,11 +180,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
-
 //  // detailuser
 //  $data = detail_user::all();
 //  Route::view('/detailuser', 'page/detailuser/tabeluser', compact('data'));
-    
+
     // Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
     //Hilmi
     //CRUD Mobil
@@ -153,4 +217,4 @@ Route::group(['middleware' => 'auth'], function () {
     // Route::put('/page/mobil/mobil/{id}', [MobilController::class, 'updateImage']);
     // Route::get('/page/mobil/detail_mobil/{id}', [MobilController::class, 'detailMobil']);
     // Route::get('/download', [MobilController::class, 'export']);
-    //     
+    //
