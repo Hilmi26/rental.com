@@ -49,6 +49,7 @@ $("#bayar").click(function (e) {
             snap.pay(response, {
                 // Optional
                 onSuccess: function (result) {
+                    
                 },
                 // Optional
                 onPending: function (result) {

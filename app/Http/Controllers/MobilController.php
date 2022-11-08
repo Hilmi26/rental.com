@@ -205,9 +205,16 @@ class MobilController extends Controller
     "bca_klikbca", "bca_klikpay", "bri_epay", "echannel", "permata_va",
     "bca_va", "bni_va", "bri_va", "other_va"],
         );
-        
+
         $snapToken = Snap::getSnapToken($params);
 
         return json_encode($snapToken);
+    }
+
+    public function showmobilrental()
+    {
+        //
+        $mobil = Mobil::where('rental_id', '=', 1)->get();
+        return view('rentaltemplate', compact('mobil'));
     }
 }

@@ -88,6 +88,7 @@ Route::view('contact', 'contact');
 
 
 
+Route::get('/rentaltemplate', [MobilController::class, 'showmobilrental']);
 
 
 
