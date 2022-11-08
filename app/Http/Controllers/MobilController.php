@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Midtrans\Config;
+use Midtrans\Snap;
 
 class MobilController extends Controller
 {
@@ -168,7 +170,8 @@ class MobilController extends Controller
         return redirect('/mobil')->with('Gambar berhasil diubah');
     }
 
-    public function detailMobil($id){
+    public function detailMobil($id)
+    {
 
         $mobil = Mobil::find($id); //mobil
         return view('page/mobil/detail_mobil', ['mobil' => $mobil]); //mengoper data mobil dan rental ke halaman view edit
@@ -178,5 +181,40 @@ class MobilController extends Controller
     {
         // return Excel::download(new MobilExport, 'daftarmobil.xlsx');
         return (new MobilExport())->download('invoices.pdf', \Maatwebsite\Excel\Excel::MPDF);
+    }
+
+    public function midtrans()
+    {
+
+        // Set your Merchant Server Key
+        Config::$serverKey = 'SB-Mid-server-bLmllmXC-WR-boVMvnunz2Cn';
+        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+        Config::$isProduction = false;
+        // Set sanitization on (default)
+        Config::$isSanitized = true;
+        // Set 3DS transaction for credit card to true
+        Config::$is3ds = true;
+
+
+        $params = array(
+            'transaction_details' => array(
+                'order_id' => rand(),
+                'gross_amount' => 10000,
+            ),
+            "enabled_payments" => [
+    "bca_klikbca", "bca_klikpay", "bri_epay", "echannel", "permata_va",
+    "bca_va", "bni_va", "bri_va", "other_va"],
+        );
+
+        $snapToken = Snap::getSnapToken($params);
+
+        return json_encode($snapToken);
+    }
+
+    public function showmobilrental()
+    {
+        //
+        $mobil = Mobil::where('rental_id', '=', 1)->get();
+        return view('rentaltemplate', compact('mobil'));
     }
 }

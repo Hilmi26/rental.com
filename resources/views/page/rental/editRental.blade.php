@@ -1,7 +1,7 @@
 @extends('tampilan')
 @section('main')
 
-    <form action = "{{ route('rental.update', $data->id)}}" method = "POST" method="POST" enctype="multipart/form-data">
+    <form action = "{{ route('rental.update', $data->id)}}" method = "POST" enctype="multipart/form-data">
     @csrf
     @method('put')
         <div class="form-group">

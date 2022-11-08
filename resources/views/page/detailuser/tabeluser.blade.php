@@ -56,6 +56,9 @@
               <a href="{{ url ('page/detailuser/'.$item->id. '/edit')}}" class="btn btn-success btn-sm mb-3">
                 edit
               </a>
+              <a href="{{ url ('deletdetailuser/'.$item->id)}}" class="btn btn-danger btn-sm mb-3">
+                Hapus
+              </a>
             </td>
         </tr>
     @endforeach

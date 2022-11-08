@@ -37,8 +37,13 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 627362a3bdae5b00d7bc978b2fb0549cd7c691d2
     public function username()
     {
         return 'username';
     }
 }
+

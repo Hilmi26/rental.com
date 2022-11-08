@@ -3,8 +3,13 @@
 
 <head>
   <meta charset="utf-8" />
+<<<<<<< HEAD
   <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('sb') }}/img/apple-icon.png">
   <link rel="icon" type="image/png" href="{{ asset('sb') }}/img/favicon.png">
+=======
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('sb') }}/images/apple-icon.png">
+  <link rel="icon" type="image/png" href="{{ asset('sb') }}/images/favicon.png">
+>>>>>>> 627362a3bdae5b00d7bc978b2fb0549cd7c691d2
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <!-- Extra details for Live View on GitHub Pages -->
   <title>
