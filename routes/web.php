@@ -35,10 +35,10 @@ Auth::routes();
 Route::view('/mobil', 'page/mobil/mobil');
 
 Route::view('index', 'index');
-    Route::view('about', 'about');
-    Route::view('car', 'car');
-    Route::view('pricing', 'pricing');
-    Route::view('contact', 'contact');
+Route::view('about', 'about');
+Route::view('car', 'car');
+Route::view('pricing', 'pricing');
+Route::view('contact', 'contact');
 
 
 
@@ -65,6 +65,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 Route::middleware(['auth', 'rental'])->group(function () {
     // mobill
+    Route::get('midtrans', [MobilController::class, 'midtrans']);
     Route::get('/mobil', [MobilController::class, 'index']);
     Route::get('/create_mobil', [MobilController::class, 'create']);
     Route::post('/mobil', [MobilController::class, 'store']);
@@ -75,6 +76,11 @@ Route::middleware(['auth', 'rental'])->group(function () {
     Route::put('/page/mobil/mobil/{id}', [MobilController::class, 'updateImage']);
     Route::get('/page/mobil/detail_mobil/{id}', [MobilController::class, 'detailMobil']);
     Route::get('/download', [MobilController::class, 'export']);
+
+    Route::get('midtan', function () {
+        return view('midtrans');
+    });
+
 
     // rental
     Route::resource('rental', rentalController::class);
@@ -103,9 +109,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
     Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
-
-    
 });
+
+
+
+
 
 
 //  // detailuser

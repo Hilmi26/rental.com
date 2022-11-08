@@ -37,20 +37,20 @@
 
 <script src=" {{ asset('/sb')}}/js/jquery.min.js"></script>
   <script src=" {{ asset('/sb')}}/js/jquery-migrate-3.0.1.min.js"></script>
-  <script src=" {{ asset('/sb')}}/js/popper.min.js"></script>
+  {{-- <script src=" {{ asset('/sb')}}/js/popper.min.js"></script> --}}
   <script src=" {{ asset('/sb')}}/js/bootstrap.min.js"></script>
   <script src=" {{ asset('/sb')}}/js/jquery.easing.1.3.js"></script>
   <script src=" {{ asset('/sb')}}/js/jquery.waypoints.min.js"></script>
   <script src=" {{ asset('/sb')}}/js/jquery.stellar.min.js"></script>
   <script src=" {{ asset('/sb')}}/js/owl.carousel.min.js"></script>
   <script src=" {{ asset('/sb')}}/js/jquery.magnific-popup.min.js"></script>
-  <script src=" {{ asset('/sb')}}/js/aos.js"></script>
+  {{-- <script src=" {{ asset('/sb')}}/js/aos.js"></script> --}}
   <script src=" {{ asset('/sb')}}/js/jquery.animateNumber.min.js"></script>
   <script src=" {{ asset('/sb')}}/js/bootstrap-datepicker.js"></script>
   <script src=" {{ asset('/sb')}}/js/jquery.timepicker.min.js"></script>
   <script src=" {{ asset('/sb')}}/js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src=" {{ asset('/sb')}}/js/google-map.js"></script>
+  {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> --}}
+  {{-- <script src=" {{ asset('/sb')}}/js/google-map.js"></script> --}}
   <script src=" {{ asset('/sb')}}/js/main.js"></script>
   <script src=" {{ asset('/sb')}}/js/app.js"></script>
 
@@ -58,3 +58,6 @@
   <script src="{{ asset('sb/vendor/datatables/jquery.dataTables.min.js') }}"></script>
   <script src="{{ asset('sb/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
   <script src="{{ asset('sb/js/demo/datatables-demo.js') }}"></script>
+
+{{-- midtrans --}}
+  <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-qKwmV_Z0m2OfUfdD"></script>
