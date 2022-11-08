@@ -32,7 +32,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-dark" id="ftco-navbar">
         <div class="container">
             <div class="word-waves">
                 <a class="navbar-brand" href="/index">"Car Rental"</a>
@@ -56,12 +56,10 @@
 
                     <div class="collapse navbar-collapse" id="ftco-nav">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active"><a href="/index" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="/index" class="nav-link">Home</a></li>
                             <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-                            <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
                             <li class="nav-item"><a href="/pricing" class="nav-link">Pricing</a></li>
                             <li class="nav-item"><a href="/car" class="nav-link">Cars</a></li>
-                            <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
                             <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
                             @guest
                                 @if (Route::has('login'))
@@ -83,12 +81,15 @@
 
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item"
-                                            href="{{ url('page/user/' . Auth::user()->id . '/edit') }}">
+                                            href="{{ url('page/detailuser/' . Auth::user()->id . '/edit') }}">
                                             Edit
                                         </a>
-                                        <a class="dropdown-item" href="{{ url('deleteuser/' . Auth::user()->id) }}">
+                                        <a class="dropdown-item" href="{{ url('deletdetaileuser/' . Auth::user()->id) }}">
                                             Hapus akun
                                         </a>
+                                        {{-- <a href="{{ url ('deletdetailuser/'.$item->id)}}" class="btn btn-danger btn-sm mb-3">
+                                            Hapus
+                                          </a> --}}
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">

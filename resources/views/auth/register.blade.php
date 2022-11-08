@@ -1,50 +1,15 @@
 @extends('layouts.app', [
     'namePage' => 'Register page',
     'activePage' => 'register',
-    'backgroundImage' => asset('assets') . "/img/bg16.jpg",
+    'backgroundImage' => asset('sb') . "/images/bg16.jpg",
 ])
 
 @section('content')
   <div class="content">
     <div class="container">
       <div class="row">
-        <div class="col-md-5 ml-auto">
-          <div class="info-area info-horizontal mt-5">
-            <div class="icon icon-primary">
-              <i class="now-ui-icons media-2_sound-wave"></i>
-            </div>
-            <div class="description">
-              <h5 class="info-title">{{ __('Marketing') }}</h5>
-              <p class="description">
-                {{ __("We've created the marketing campaign of the website. It was a very interesting collaboration.") }}
-              </p>
-            </div>
-          </div>
-          <div class="info-area info-horizontal">
-            <div class="icon icon-primary">
-              <i class="now-ui-icons media-1_button-pause"></i>
-            </div>
-            <div class="description">
-              <h5 class="info-title">{{ __('Fully Coded in HTML5') }}</h5>
-              <p class="description">
-                {{ __("We've developed the website with HTML5 and CSS3. The client has access to the code using GitHub.") }}
-              </p>
-            </div>
-          </div>
-          <div class="info-area info-horizontal">
-            <div class="icon icon-info">
-              <i class="now-ui-icons users_single-02"></i>
-            </div>
-            <div class="description">
-              <h5 class="info-title">{{ __('Built Audience') }}</h5>
-              <p class="description">
-                {{ __('There is also a Fully Customizable CMS Admin Dashboard for this product.') }}
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mr-auto">
-          <div class="card card-signup text-center">
+        <div class="col-md-4 mx-auto">
+          <div class="card card-signup text-center text-warning">
             <div class="card-header ">
               <h4 class="card-title">{{ __('Register') }}</h4>
               <div class="social">
@@ -84,7 +49,7 @@
                       <i class="now-ui-icons users_circle-08"></i>
                     </div>
                   </div>
-                  <input class="form-control {{ $errors->has('username') ? ' is-invalid' : '' }}" placeholder="{{ __('Nama Lengkap') }}" type="text" name="username" value="{{ old('username') }}" required autofocus>
+                  <input class="form-control {{ $errors->has('username') ? ' is-invalid' : '' }}" placeholder="{{ __('Masukkan Username') }}" type="text" name="username" value="{{ old('username') }}" required autofocus>
                   @if ($errors->has('username'))
                     <span class="invalid-feedback" style="display: block;" role="alert">
                       <strong>{{ $errors->first('username') }}</strong>
@@ -130,16 +95,8 @@
                   </div>
                   <input class="form-control" placeholder="{{ __('Confirm Password') }}" type="password" name="password_confir" required>
                 </div>
-                <div class="form-check text-left">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox">
-                    <span class="form-check-sign"></span>
-                    {{ __('I agree to the') }}
-                    <a href="#something">{{ __('terms and conditions') }}</a>.
-                  </label>
-                </div>
                 <div class="card-footer ">
-                  <button type="submit" class="btn btn-primary btn-round btn-lg">{{__('Get Started')}}</button>
+                  <button type="submit" class="btn btn-warning btn-round btn-sm">{{__('Register Now')}}</button>
                 </div>
               </form>
             </div>
