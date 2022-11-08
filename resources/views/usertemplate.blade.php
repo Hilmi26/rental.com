@@ -110,6 +110,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Wajah KTP</label>
+                        <img src="" alt="" class="">
                         <input type="text" class="form-control" placeholder="Your Wajah KTP">
                     </div>
                     <div class="form-group">

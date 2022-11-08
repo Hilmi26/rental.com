@@ -64,6 +64,10 @@ Route::get('services', function () {
     return view('services');
 });
 
+Route::get('usertemplate', function () {
+    return view('usertemplate');
+});
+
 // Route::get('contact', function () {
 //     return view('contact');
 // });
@@ -124,16 +128,16 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 Route::middleware(['auth', 'rental'])->group(function () {
     // mobill
-    Route::get('/mobil', [MobilController::class, 'index']);
-    Route::get('/create_mobil', [MobilController::class, 'create']);
-    Route::post('/mobil', [MobilController::class, 'store']);
-    Route::get('/page/mobil/edit_mobil/{id}', [MobilController::class, 'edit']);
-    Route::get('/page/mobil/edit_image/{id}', [MobilController::class, 'editImage']);
-    Route::delete('/mobil/{id}', [MobilController::class, 'destroy']); //mengarah ke function destroy di MobilController
-    Route::resource('mobil', MobilController::class); //update detail mobil
-    Route::put('/page/mobil/mobil/{id}', [MobilController::class, 'updateImage']);
-    Route::get('/page/mobil/detail_mobil/{id}', [MobilController::class, 'detailMobil']);
-    Route::get('/download', [MobilController::class, 'export']);
+    // Route::get('/mobil', [MobilController::class, 'index']);
+    // Route::get('/create_mobil', [MobilController::class, 'create']);
+    // Route::post('/mobil', [MobilController::class, 'store']);
+    // Route::get('/page/mobil/edit_mobil/{id}', [MobilController::class, 'edit']);
+    // Route::get('/page/mobil/edit_image/{id}', [MobilController::class, 'editImage']);
+    // Route::delete('/mobil/{id}', [MobilController::class, 'destroy']); //mengarah ke function destroy di MobilController
+    // Route::resource('mobil', MobilController::class); //update detail mobil
+    // Route::put('/page/mobil/mobil/{id}', [MobilController::class, 'updateImage']);
+    // Route::get('/page/mobil/detail_mobil/{id}', [MobilController::class, 'detailMobil']);
+    // Route::get('/download', [MobilController::class, 'export']);
 
     // rental
     Route::resource('rental', rentalController::class);
