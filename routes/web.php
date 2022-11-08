@@ -1,16 +1,17 @@
 <?php
 
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\detailRentalController;
+use App\Http\Controllers\Excel;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\DetailUserController;
-use App\Http\Controllers\UserController;
-use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\MobilController;
-use App\Http\Controllers\Excel;
 use App\Http\Controllers\rentalController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\TransaksiController;
+use Illuminate\Routing\Route as RoutingRoute;
+use App\Http\Controllers\DetailUserController;
+use App\Http\Controllers\detailRentalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,9 +60,9 @@ Route::get('services', function () {
     return view('services');
 });
 
-Route::get('contact', function () {
-    return view('contact');
-});
+// Route::get('contact', function () {
+//     return view('contact');
+// });
 
 Auth::routes();
 
@@ -82,10 +83,17 @@ Route::get('/page/mobil/edit_image/{id}', [MobilController::class, 'editImage'])
 Route::delete('/mobil/{id}', [MobilController::class, 'destroy']); //mengarah ke function destroy di MobilController
 Route::resource('mobil', MobilController::class); //update detail mobil
 Route::put('/page/mobil/mobil/{id}', [MobilController::class, 'updateImage']);
-
 Route::get('/page/mobil/detail_mobil/{id}', [MobilController::class, 'detailMobil']);
 
+
+Route::get('/page/transaksi/transaksi/{id}', [TransaksiController::class, 'index']);
+Route::post('/transaksi', [TransaksiController::class, 'store']);
+
+
 Route::get('/download', [MobilController::class, 'export']);
+
+
+
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

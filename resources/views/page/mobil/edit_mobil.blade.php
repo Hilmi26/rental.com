@@ -16,6 +16,7 @@
     </div>
 </section>
 
+<section class="ftco-section bg-light">
     <div class="container py-5">
         <div class="main-panel">
             <div class="content-wrapper">
@@ -146,5 +147,6 @@
             </div>
         </div>
         </div>
+</section>
 
-@
+@include('layouts.footer')

@@ -115,6 +115,7 @@
                 </div>
             </div>
         </div>
+
         <div class="row">
             <div class="col-md-12 pills">
                 <div class="bd-example bd-example-tabs">
@@ -341,7 +342,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end" style="background-image: url(images/car-1.jpg);">
+                    <div class="img rounded d-flex align-items-end" style="background-image: url({{ asset('/sb') }}/images/car-1.jpg);">
                     </div>
                     <div class="text">
                         <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
@@ -356,7 +357,7 @@
             </div>
             <div class="col-md-4">
                 <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end" style="background-image: url(images/car-2.jpg);">
+                    <div class="img rounded d-flex align-items-end" style="background-image: url({{ asset('/sb') }}/images/car-2.jpg);">
                     </div>
                     <div class="text">
                         <h2 class="mb-0"><a href="car-single.html">Range Rover</a></h2>
@@ -371,7 +372,7 @@
             </div>
             <div class="col-md-4">
                 <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end" style="background-image: url(images/car-3.jpg);">
+                    <div class="img rounded d-flex align-items-end" style="background-image: url({{ asset('/sb') }}/images/car-3.jpg);">
                     </div>
                     <div class="text">
                         <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
