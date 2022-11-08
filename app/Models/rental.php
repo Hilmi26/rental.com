@@ -13,6 +13,18 @@ class rental extends Model
     // protected $table = [];
     protected $guarded = ['id'];
 
+    protected $fillable = [
+        'nama_rental',
+        'username',
+        'email',
+        'password',
+    ];
+
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
     public function detailrental()
     {
         // return $this->belongsTo(detail_rental::class);

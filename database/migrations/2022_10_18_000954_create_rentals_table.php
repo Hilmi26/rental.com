@@ -16,11 +16,13 @@ return new class extends Migration
         Schema::create('rentals', function (Blueprint $table) {
             $table->id();
             $table->string('nama_rental');
-            $table->string('email')->unique();
-            $table->string('username')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            // $table->rememberToken();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->boolean('rental');
+            // $table->string('email')->unique();
+            // $table->string('username')->unique();
+            // $table->timestamp('email_verified_at')->nullable();
+            // $table->string('password');
+            // // $table->rememberToken();
             $table->timestamps();
         });
     }

@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('ulasans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('mobil_id')->constrained();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('mobil_id')->constrained('mobils')->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('foto_ulasan');
             $table->string('ulasan');
             $table->timestamps();

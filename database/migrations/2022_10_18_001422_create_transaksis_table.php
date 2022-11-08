@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('mobil_id')->constrained();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('mobil_id')->constrained('mobils')->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('nama_rental');
             $table->time('jam_ambil');
             $table->time('jam_kembali');
