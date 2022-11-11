@@ -17,6 +17,14 @@
 </section>
 
 
+<section>
+<div class="container">
+    <div class="d-flex mb-0 d-block justify-content-end">
+        <a href="/create_mobil" type="button" class="btn btn-primary rounded mt-3 mb-3">Tambah Mobil</a>
+    </div>
+</div>
+</section>
+
 <section class="ftco-section bg-light">
     <div class="container">
         <div class="row">
@@ -52,11 +60,11 @@
                         </div>
 
                         @if ($item->status_unit != 'Ready')
-                            <div class="car-status-unavailable ms-auto text-center ">
-                                <span class=" text-light mx-auto my-auto">{{ $item->status_unit }}</span>
+                            <div class="car-status-unavailable ms-auto text-center" style="font-size: 12px">
+                                <span class=" text-light mx-auto my-auto" >{{ $item->status_unit }}</span>
                             </div>
                         @else
-                            <div class="car-status-ready ms-auto text-center ">
+                            <div class="car-status-ready ms-auto text-center" style="font-size: 12px">
                                 <span class=" text-light mx-auto my-auto">{{ $item->status_unit }}</span>
                             </div>
                         @endif
@@ -79,9 +87,8 @@
                                 <p class="price ml-auto">Rp.{{ $item->harga_sewa }} <span>/day</span></p>
                             </div>
                             <p class="d-flex mb-0 d-block justify-content-end">
-                                <a href="#" class="btn btn-primary py-2 mr-2">Pinjam</a>
-                                <a href="/page/mobil/detail_mobil/{{ $item->id }}" type="button"
-                                    class="btn btn-secondary py-2 ">Details</a>
+                                <a href="/page/transaksi/transaksi/{{ $item->id }}" class="btn btn-primary py-2">Pinjam</a>
+                                <a href="/page/mobil/detail_mobil/{{ $item->id }}" type="button"class="btn btn-secondary py-2 ml-2 ">Details</a>
 
                             </p>
                         </div>
