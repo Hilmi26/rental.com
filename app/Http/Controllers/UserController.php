@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -120,7 +121,32 @@ class UserController extends Controller
             'email' => $request -> email,
             // 'password' => Hash::make($request['password']),
         ]);
-        return redirect('page/user') ->with ('success', 'Data Berhasil Dirubah');
+        return redirect(url('page/detailuser/'. Auth::user()->id . '/edit')) ->with ('success', 'Data Berhasil Dirubah');
+    }
+
+    public function updatepassword(Request $request, $id)
+    {
+
+        // dd ($request);
+        $data = User :: findOrFail ($id) ;
+
+        $validator = $request-> validate([
+            // 'nama_user' => 'required|string',
+            // 'username' => 'required|string',
+            // 'email' => 'required|string',
+            'password' => 'required|string',
+            'password_confir' => 'required|same:password',
+     
+        ]);
+
+        $data ->update([
+            // 'nama_user' => $request -> nama_user,
+            // 'username' => $request -> username,
+            // 'email' => $request -> email,
+            'password' => Hash::make($request['password']),
+        ]);
+        return redirect(url('page/detailuser/'. Auth::user()->id . '/edit')) ->with ('success', 'Data Berhasil Dirubah');
+        
     }
 
     /**

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class DetailUserController extends Controller
 {
@@ -24,7 +25,8 @@ class DetailUserController extends Controller
     {
         // $data = DB :: select('SELECT * FROM detail_users JOIN users ON detail_users.user_id=users.id');
         $data = detail_user::all();
-        return view ('page/detailuser/tabeluser', compact ('data'));
+        $user = User:: all();
+        return view ('page/detailuser/tabeluser', compact ('data', 'user'));
         // dd ($data);
     }
 
@@ -107,7 +109,7 @@ class DetailUserController extends Controller
         
         // $data = detail_user :: findOrFail ($id);
         // $data = DB :: select('SELECT * FROM detail_users JOIN users ON detail_users.user_id=users.id');
-        return view ('page/detailuser/edit', compact ('data', 'user'));
+        return view ('usertemplate', compact ('data', 'user'));
 
         // dd($id);
     }
@@ -143,9 +145,9 @@ class DetailUserController extends Controller
             'kota' => $request -> kota,
             'provinsi' => $request -> provinsi,
             'kode_pos' => $request -> kode_pos,]);
-        $user ->update([
-            'username' => $request -> username,
-        ]);
+        // $user ->update([
+        //     'username' => $request -> username,
+        // ]);
 
         if ($request ->file() != null){
 
@@ -188,12 +190,14 @@ class DetailUserController extends Controller
 
             ]);
 
-            return redirect('page/detailuser');
+            // return redirect('page/detailuser');
             // ->with('error', 'Tidak Ada Yang di Rubah');
+            return redirect(url('page/detailuser/'. Auth::user()->id . '/edit'));
         }
 
-        return redirect('page/detailuser') ;
+        // return redirect('page/detailuser') ;
         // ->with ('success', 'Data Berhasil Dirubah');
+        return redirect(url('page/detailuser/'. Auth::user()->id . '/edit'));
     }
 
     /**

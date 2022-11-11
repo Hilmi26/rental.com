@@ -16,6 +16,7 @@ use App\Http\Controllers\detailRentalController;
 
 use App\Models\detail_rental;
 use App\Models\detail_user;
+use Database\Seeders\DetailUserSeeder;
 
 /*
 |--------------------------------------------------------------------------
@@ -190,6 +191,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
     Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
 });
+
+Route:: put('updatepassword/{id}', [UserController:: class, 'updatepassword'])->name('updatepassword');
 
 
 

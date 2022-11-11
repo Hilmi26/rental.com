@@ -20,28 +20,32 @@
         <div class="row d-flex mb-5 contact-info">
             <div class="col-md-4">
                 <div class="row mb-5">
-                    <div class="col-md-12">
-                        <div class="border w-100 rounded mb-4 d-flex" style="padding: 150px;">
-                            <p>Foto Profil<img src="foto.jpg" alt="" class="rounded" style="width: 500px"></p>
+                    <div class="col-md-12 justify-content-center">
+                        <div class="border w-100 rounded mb-4" style="padding: 15px;">
+                            <p>Your Profil </p>
+                        
+                            <img src="{{ asset('storage/'. $data->foto_profil )}}" alt="" class="rounded mx-auto" style="width: 200px">
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="w-100 rounded mb-2 mt-1 d-flex">
-                            <form action="#" class="bg-light p-5 rounded contact-form">
+                            <form action="{{ url ('updatepassword/'.$data->user->id)}}" class="bg-light p-5 rounded contact-form" method="POST">
+                                @csrf
+                                @method('put')
                                 <div class="form-group">
                                     <label for="">Current Password</label>
-                                    <input type="text" class="form-control" placeholder="Your Current Password">
+                                    <input type="text" class="form-control" placeholder="Your Current Password" value="{{$data->user->password}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="">New Password</label>
-                                    <input type="text" class="form-control" placeholder="Your New Password">
+                                    <input type="password" class="form-control" placeholder="Your New Password" name="password" >
                                 </div>
                                 <div class="form-group">
                                     <label for="">Confirm Password</label>
-                                    <input type="text" class="form-control" placeholder="Your Confirm Password">
+                                    <input type="password" class="form-control" placeholder="Your Confirm Password" name="password_confir" >
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" value="Change Password" class="btn btn-primary py-3 px-5">
+                                    <button type="submit" class="btn btn-primary btn-sm mt-3">Submit</button>
                                 </div>
                             </form>
                         </div>
@@ -70,55 +74,74 @@
 
             <div class="col-md-8 block-9 mb-md-5">
                 {{-- form biodata --}}
-                <form action="#" class="bg-light p-5 rounded contact-form">
-                    <div class="form-group">
-                        <label for="">Nama</label>
-                        <input type="text" class="form-control" placeholder="Your Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Email</label>
-                        <input type="text" class="form-control" placeholder="Your Email">
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Save" class="btn btn-primary py-3 px-5">
-                    </div>
+                <form action = "{{ url ('page/user/'.$data->id)}}" method = "POST" class="bg-light p-5 rounded contact-form">
+                    @csrf
+                    @method('put')
+                        <div class="form-group">
+                            <label >Nama Lengkap</label>
+                            <input type="text" class="form-control @error('nama_user') is-invalid @enderror" name="nama_user" value="{{$data->user->nama_user}}">
+                        </div>
+                        <div class="form-group">
+                            <label >User Name</label>
+                            <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{$data->user->username}}">
+                        </div>
+                        <div class="form-group">
+                            <label >Email</label>
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$data->user->email}}">
+                        </div >
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary btn-sm mt-3">Submit</button>
+                        </div>
                 </form>
 
                 {{-- form ganti password --}}
-                <form action="#" class="bg-light p-5 rounded contact-form">
+                <form action = "{{ url ('page/detailuser/'.$data->id)}}" method = "POST" enctype="multipart/form-data" class="bg-light p-5 rounded contact-form">
+                    @csrf
+                    @method('put') 
                     <div class="form-group">
-                        <label for="">Telepon</label>
-                        <input type="text" class="form-control" placeholder="Your Telepon">
+                        <input type="hidden" class="form-control @error('user_id') is-invalid @enderror " name="user_id"  value="{{$data->id}}">
+
+                        <label >No HP</label>
+                        <input type="text" class="form-control @error('telp_user') is-invalid @enderror" name="telp_user"  value="{{$data->telp_user}}">
                     </div>
                     <div class="form-group">
-                        <label for="">Alamat</label>
-                        <input type="text" class="form-control" placeholder="Your Alamat">
+                        <label >Alamat</label>
+                        <input type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat"  value="{{$data->alamat}}">
                     </div>
                     <div class="d-flex mb-0 d-block justify-content-center flex-fill row">
                         <div class="form-group col-4">
-                            <label for="">Kota</label>
-                            <input type="text" class="form-control" placeholder="Your Kota">
+                            <label>Provinsi</label>
+                            <input type="hidden" class="form-control @error('provinsi') is-invalid @enderror" name="provinsi" value="{{$data->provinsi}}" id="provinsi2">
+                            <select class="form-control @error('provinsi') is-invalid @enderror" id="provinsi" onchange="daerah(value)" >
+                                <option>{{$data->provinsi}}</option>
+                            </select>
                         </div>
                         <div class="form-group col-4">
-                            <label for="">Provinsi</label>
-                            <input type="text" class="form-control" placeholder="Your Provinsi">
+                            <label >Kota</label>
+                            <select class="form-control @error('provinsi') is-invalid @enderror" name="kota" id="kota" onchange="daerah(value)">
+                                <option>{{$data->kota}}</option>
+                            </select>
                         </div>
                         <div class="form-group col-4">
-                            <label for="">Kode Pos</label>
-                            <input type="text" class="form-control" placeholder="Your Kode Pos">
+                            <label >Kode Pos</label>
+                            <input type="number" class="form-control @error('kode_pos') is-invalid @enderror" name="kode_pos" value="{{$data->kode_pos}}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="">Wajah KTP</label>
-                        <img src="" alt="" class="">
-                        <input type="text" class="form-control" placeholder="Your Wajah KTP">
+                        <br>
+                        <img src="{{ asset('storage/'. $data->wajah_ktp)}}" height="100" alt="" class="mt-2 mb-2">
+                        <input type="file" class="form-control-file mt-1" name="selfi"  value="{{$data->wajah_ktp}}">
                     </div>
                     <div class="form-group">
                         <label for="">KTP</label>
-                        <input type="text" class="form-control" placeholder="Your KTP">
+                        <br>
+                        <img src="{{ asset('storage/'. $data->ktp )}}" height="100" alt="" class="mt-2 mb-2">
+
+                        <input type="file" class="form-control-file" name="ktp"  value="{{$data->ktp}}">
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Save" class="btn btn-primary py-3 px-5">
+                        <button type="submit" class="btn btn-primary btn-sm mt-3">Submit</button>
                     </div>
                 </form>
 
